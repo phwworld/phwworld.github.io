@@ -30,13 +30,13 @@
     }
 
     .swiper {
-      width: 1000px;
+      width: 500px;
       height: 300px;
       padding-right: 100px;
-      padding-bottom: 30px;
+      padding-bottom: 20px;
       border: 1px solid red;
       margin-top: 100px;
-      /* overflow: visible; */
+      overflow: visible;
     }
 
     .swiper-slide {
@@ -56,20 +56,15 @@
     }
 
     .swiper-slide {
-      width:80%;
+      /* width:80%; */
+      width: 80%;
     }
 
-    /* .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
-      bottom: -30px;
-    } */
-
-    /* .swiper-slide:nth-child(2n) {
-      width: 60%;
+    .swiper-horizontal>.swiper-scrollbar,
+    .swiper-scrollbar.swiper-scrollbar-horizontal {
+      left: 0;
+      width: 100%;
     }
-
-    .swiper-slide:nth-child(3n) {
-      width: 40%;
-    } */
   </style>
 </head>
 
@@ -94,6 +89,7 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
+      observer: true,
       slidesPerView: "auto",
       centeredSlides: true,
       spaceBetween: 30,
