@@ -250,21 +250,32 @@
 }
 
 
-@page {
+@page{
     size: A4;
     margin: 0;
 }
 
-@media print {
+@media print{
+    * {
+        -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
+        color-adjust: exact !important;                 /*Firefox*/
+    }
+
     html, body {
         width: 210mm;
         height: 297mm;
         background: #fff;
     }
 
-    .page-wrap {
-        width: 210mm;
-        height: 297mm;
+    .page-wrap{
+        
+        height: 287mm;
+        padding-top: 5px;
         page-break-after: always;
+    }
+
+    .img-down,
+    .pdf-down{
+        display: none;
     }
 }

@@ -4,9 +4,10 @@ jQuery(function() {
     const captureDiv = document.querySelector('#pdfArea');
 
     function downImg() {
-        html2canvas(captureDiv).then(canvas => {
-           saveImg(canvas.toDataURL('image/png'), 'capture.png'); 
-        });
+        window.print();
+        // html2canvas(captureDiv).then(canvas => {
+        //    saveImg(canvas.toDataURL('image/png'), 'capture.png'); 
+        // });
     }
 
     let saveImg = (uri, filename) => {
