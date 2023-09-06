@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진단검사</title>
+    <link rel="stylesheet" href="./css/ui.css">
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script src="./js/jspdf.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+    <script src="./js/html2canvas.min.js"></script>
+    <script src="./js/ui.js"></script>
+</head>
+
+<body>
+    <button type="button" class="img-down">image 다운로드</button>
+    <button type="button" class="pdf-down">pdf 다운로드</button>
+    <div class="print-area" id="pdfArea">
+        <!-- 페이지별 -->
+        <section class="page-wrap">
+            <!-- head -->
+            <div class="head">
+                <p><span>META 자기조절학습검사</span></p>
+                <div>
+                    <span>이름 : 이다혜</span>
+                    <span>검사일 : 1차 2023-06-22</span>
+                </div>
+            </div>
+            <!-- //head -->
+
+            <!-- tit-area -->
+            <div class="tit-area">
+                <p><span>Ⅳ</span>행동전략</p>
+                <ul class="step" style="display:none">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li>step 04</li>
+                    <li></li>
+                </ul>
+            </div>
+            <!-- //tit-area -->
+
+            <!-- guide -->
+            <div class="guide">
+                <p><span><img src="./img/ico_guide06.png" alt=""></span>행동적<br>학습기술</p>
+                <div>
+                    <p><span class="half-hl">행동적 학습기술은 실질적으로 학업을 수행하는 필요한 실행력과 실천기술을 측정합니다.</span></p>
+                    <ul>
+                        <li>∙ 행동적 학습기술이 높은 경우 현재의 학습기술이 습관화되어 유지되게 하는 것이 필요합니다.</li>
+                        <li>∙ 행동적 학습기술이 낮은 경우 수업태도를 바르게 갖는 것부터 조금씩 개선해 보기 바랍니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //guide -->
+
+            <!-- result -->
+            <div class="result">
+                <table>
+                    <colgroup>
+                        <col style="width: 20%"><col style="width: *"><col span="14" style="width: 26px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">척도</th>
+                            <th rowspan="2">T점수 (백분위)</th>
+                            <th colspan="3">매우 낮음</th>
+                            <th colspan="2" class="dot">낮음</th>
+                            <th colspan="4" class="dot normal">보통</th>
+                            <th colspan="2" class="dot">높음</th>
+                            <th colspan="4" class="dot">매우 높음</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="num">20</th>
+                            <th colspan="2" class="num dot">30</th>
+                            <th colspan="2" class="num dot">40</th>
+                            <th colspan="2" class="num dot">50</th>
+                            <th colspan="2" class="num dot">60</th>
+                            <th colspan="2" class="num dot">70</th>
+                            <th colspan="2" class="num dot">80</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>행동적 학습기술</strong></td>
+                            <td><strong>57(65)</strong></td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:2px;left:0;width:1000%;height:10px;border-radius:0 12.5px 12.5px 0;background:#ff8a94;opacity:.9;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>공부환경</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity:.6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>시간관리</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>수업대토</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>노트하기</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>시험준비</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //result -->
+
+            <!-- solutions -->
+            <div class="solutions">
+                <div>
+                    <p>공부환경<br><span>매우 낮음</span></p>
+                    <div>
+                        <strong>학습에 최적화된 공부환경이 될 수 있도록 정리, 정돈하는 습관</strong>
+                        공부하기 전, 주변을 정리하는 것이 매우 필요합니다. 공부에 집중하기 위해 주변을 정리하는 시간을 쓰는 것이 상당히 요구됩니다. 쾌적한 환경을 만들고, 학용품을 쉽게 찾을 수 있게 정돈함으로써 공부에 집중할 수 있습니다. 정돈된 공부 환경은 학습 능률을 올려주기에 꼭 정리하는 습관을 갖기 바랍니다.
+                    </div>
+                </div>
+                <div>
+                    <p>시간관리<br><span>매우 높음</span></p>
+                    <div>
+                        <strong>규칙적으로 공부할 수 있는 시간을 계획하고, 관리하는 습관</strong>
+                        공부 시간을 관리하고, 활용하는데 탁월하군요. 시간에 따라 규칙적으로 공부하는 것을 매우 좋아하는 편입니다. 일상에서 공부 시간을 정해 두거나 시간 계획을 따르며 공부하는 것을 아주 선호할 가능성이 높습니다. 지금처럼 규칙적인 공부습관을 지속할 수 있다면, 성적도 계속 향상될 수 있을 거예요.
+                    </div>
+                </div>
+                <div>
+                    <p>수업태도<br><span>보통</span></p>
+                    <div>
+                        <strong>수업에 집중하여 선생님 말씀을 경청하고, 수업에 필요한 물품을 사전에 준비하는 습관</strong>
+                        대체적으로 괜찮은 수업태도를 지녔습니다. 수업시간에 집중력을 잃지 않으려고 노력하는 편입니다. 아는 내용이라도 귀 담아 듣고, 선생님의 이야기에 집중하려고 합니다. 수업 준비물 또한 빠트리지 않으려고 하지만 간혹 놓칠 때도 있습니다. 수업태도는 학업성적을 향상하는데 매우 중요하기에 지금보다 더욱 집중하기 위해 노력해 주세요.
+                    </div>
+                </div>
+                <div>
+                    <p>노트하기<br><span>매우 낮음</span></p>
+                    <div>
+                        <strong>학습한 핵심 내용을 정리하여 기록하고, 기억하기 위해 활용하는 공부습관</strong>
+                        메모나 필기하는 것을 매우 어려워할 수 있습니다. 학습 요점이나 이해한 내용을 메모하는 것을 불필요한 행동이라고 생각할 가능성이 높습니다. 중요한 내용을 알아볼 수 있게 정리하고 시험공부 시 노트를 활용하는 것은 어려워 할 수 있습니다. 핵심 내용을 요약하고 정리하는 것은 학습에 꼭 필요한 습관이기에 필기하는 습관을 가져 보세요.
+                    </div>
+                </div>
+                <div>
+                    <p>시험준비<br><span>보통</span></p>
+                    <div>
+                        <strong>평소에 시험 준비 전략을 학습에 잘 적용하고, 시험 상황에서도 실수를 줄이기 위해 준비하는 습관</strong>
+                        대체적으로 시험준비를 잘 하고 있습니다. 종종 선생님이 수업시간에 강조한 내용은 메모하는 것으로 보입니다. 때때로 시험공부를 할 때 중요한 내용을 중심으로 공부하고, 시험을 칠 때는 지시문을 꼼꼼히 읽어 좋은 점수를 받기 위해 노력하기도 합니다.
+                    </div>
+                </div>
+            </div>
+            <!-- //solutions -->
+
+            <!-- 총평 -->
+            <div class="review">
+                <p>총평</p>
+                행동적 학습기술이 보통 수준에 속합니다. 학습을 효율적으로 할 수 있는 공부환경 조성, 시간관리, 노트필기 등의 학습기술을 갖추고 있으나 개선할 필요성이 있습니다. 행동적 학습기술은 학교와 학원
+                수업 및 개인 학습활동에서 가장 많은 비중을 차지하고 있는 기술이기에 이 기술이 개선된다면 성적을 향상시키는데 많은 도움을 받을 수 있습니다. 이를 위해 내가 잘 활용하고 있는 기술을 중심으로
+                부족한 기술을 보완할 수 있는 전략을 수립하여 실천한다면 점차 좋은 성적을 거둘 수 있을 것입니다.
+            </div>
+            <!-- //총평 -->
+
+            <!-- paging -->
+            <p class="paging">13</p>
+        </section>
+        <!-- //페이지별 -->
+
+        <!-- 페이지별 -->
+        <section class="page-wrap">
+            <!-- head -->
+            <div class="head">
+                <p><span>META 자기조절학습검사</span></p>
+                <div>
+                    <span>이름 : 이다혜</span>
+                    <span>검사일 : 1차 2023-06-22</span>
+                </div>
+            </div>
+            <!-- //head -->
+
+            <!-- tit-area -->
+            <div class="tit-area">
+                <p><span>Ⅳ</span>행동전략</p>
+                <ul class="step" style="display:none">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li>step 04</li>
+                    <li></li>
+                </ul>
+            </div>
+            <!-- //tit-area -->
+
+            <!-- guide -->
+            <div class="guide">
+                <p><span><img src="./img/ico_guide06.png" alt=""></span>행동적<br>학습기술</p>
+                <div>
+                    <p><span class="half-hl">행동적 학습기술은 실질적으로 학업을 수행하는 필요한 실행력과 실천기술을 측정합니다.</span></p>
+                    <ul>
+                        <li>∙ 행동적 학습기술이 높은 경우 현재의 학습기술이 습관화되어 유지되게 하는 것이 필요합니다.</li>
+                        <li>∙ 행동적 학습기술이 낮은 경우 수업태도를 바르게 갖는 것부터 조금씩 개선해 보기 바랍니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //guide -->
+
+            <!-- result -->
+            <div class="result">
+                <table>
+                    <colgroup>
+                        <col style="width: 20%"><col style="width: *"><col span="14" style="width: 26px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">척도</th>
+                            <th rowspan="2">T점수 (백분위)</th>
+                            <th colspan="3">매우 낮음</th>
+                            <th colspan="2" class="dot">낮음</th>
+                            <th colspan="4" class="dot normal">보통</th>
+                            <th colspan="2" class="dot">높음</th>
+                            <th colspan="4" class="dot">매우 높음</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="num">20</th>
+                            <th colspan="2" class="num dot">30</th>
+                            <th colspan="2" class="num dot">40</th>
+                            <th colspan="2" class="num dot">50</th>
+                            <th colspan="2" class="num dot">60</th>
+                            <th colspan="2" class="num dot">70</th>
+                            <th colspan="2" class="num dot">80</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>행동적 학습기술</strong></td>
+                            <td><strong>57(65)</strong></td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:2px;left:0;width:1000%;height:10px;border-radius:0 12.5px 12.5px 0;background:#ff8a94;opacity:.9;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>공부환경</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity:.6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>시간관리</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>수업대토</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>노트하기</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>시험준비</td>
+                            <td>23(30)</td>
+                            <td style="vertical-align: top;">
+                                <div style="position:relative;">
+                                    <span style="position:absolute;top:4px;left:0;width:120%;height:10px;border-radius:0 12.5px 12.5px 0;background:#9aa0a8;opacity: .6;"></span>
+                                </div>
+                            </td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot normal">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                            <td class="dot">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //result -->
+
+            <!-- solutions -->
+            <div class="solutions">
+                <div>
+                    <p>공부환경<br><span>매우 낮음</span></p>
+                    <div>
+                        <strong>학습에 최적화된 공부환경이 될 수 있도록 정리, 정돈하는 습관</strong>
+                        공부하기 전, 주변을 정리하는 것이 매우 필요합니다. 공부에 집중하기 위해 주변을 정리하는 시간을 쓰는 것이 상당히 요구됩니다. 쾌적한 환경을 만들고, 학용품을 쉽게 찾을 수 있게 정돈함으로써 공부에 집중할 수 있습니다. 정돈된 공부 환경은 학습 능률을 올려주기에 꼭 정리하는 습관을 갖기 바랍니다.
+                    </div>
+                </div>
+                <div>
+                    <p>시간관리<br><span>매우 높음</span></p>
+                    <div>
+                        <strong>규칙적으로 공부할 수 있는 시간을 계획하고, 관리하는 습관</strong>
+                        공부 시간을 관리하고, 활용하는데 탁월하군요. 시간에 따라 규칙적으로 공부하는 것을 매우 좋아하는 편입니다. 일상에서 공부 시간을 정해 두거나 시간 계획을 따르며 공부하는 것을 아주 선호할 가능성이 높습니다. 지금처럼 규칙적인 공부습관을 지속할 수 있다면, 성적도 계속 향상될 수 있을 거예요.
+                    </div>
+                </div>
+                <div>
+                    <p>수업태도<br><span>보통</span></p>
+                    <div>
+                        <strong>수업에 집중하여 선생님 말씀을 경청하고, 수업에 필요한 물품을 사전에 준비하는 습관</strong>
+                        대체적으로 괜찮은 수업태도를 지녔습니다. 수업시간에 집중력을 잃지 않으려고 노력하는 편입니다. 아는 내용이라도 귀 담아 듣고, 선생님의 이야기에 집중하려고 합니다. 수업 준비물 또한 빠트리지 않으려고 하지만 간혹 놓칠 때도 있습니다. 수업태도는 학업성적을 향상하는데 매우 중요하기에 지금보다 더욱 집중하기 위해 노력해 주세요.
+                    </div>
+                </div>
+                <div>
+                    <p>노트하기<br><span>매우 낮음</span></p>
+                    <div>
+                        <strong>학습한 핵심 내용을 정리하여 기록하고, 기억하기 위해 활용하는 공부습관</strong>
+                        메모나 필기하는 것을 매우 어려워할 수 있습니다. 학습 요점이나 이해한 내용을 메모하는 것을 불필요한 행동이라고 생각할 가능성이 높습니다. 중요한 내용을 알아볼 수 있게 정리하고 시험공부 시 노트를 활용하는 것은 어려워 할 수 있습니다. 핵심 내용을 요약하고 정리하는 것은 학습에 꼭 필요한 습관이기에 필기하는 습관을 가져 보세요.
+                    </div>
+                </div>
+                <div>
+                    <p>시험준비<br><span>보통</span></p>
+                    <div>
+                        <strong>평소에 시험 준비 전략을 학습에 잘 적용하고, 시험 상황에서도 실수를 줄이기 위해 준비하는 습관</strong>
+                        대체적으로 시험준비를 잘 하고 있습니다. 종종 선생님이 수업시간에 강조한 내용은 메모하는 것으로 보입니다. 때때로 시험공부를 할 때 중요한 내용을 중심으로 공부하고, 시험을 칠 때는 지시문을 꼼꼼히 읽어 좋은 점수를 받기 위해 노력하기도 합니다.
+                    </div>
+                </div>
+            </div>
+            <!-- //solutions -->
+
+            <!-- 총평 -->
+            <div class="review">
+                <p>총평</p>
+                행동적 학습기술이 보통 수준에 속합니다. 학습을 효율적으로 할 수 있는 공부환경 조성, 시간관리, 노트필기 등의 학습기술을 갖추고 있으나 개선할 필요성이 있습니다. 행동적 학습기술은 학교와 학원
+                수업 및 개인 학습활동에서 가장 많은 비중을 차지하고 있는 기술이기에 이 기술이 개선된다면 성적을 향상시키는데 많은 도움을 받을 수 있습니다. 이를 위해 내가 잘 활용하고 있는 기술을 중심으로
+                부족한 기술을 보완할 수 있는 전략을 수립하여 실천한다면 점차 좋은 성적을 거둘 수 있을 것입니다.
+            </div>
+            <!-- //총평 -->
+
+            <!-- paging -->
+            <p class="paging">13</p>
+        </section>
+        <!-- //페이지별 -->
+    </div>
+</body>
+
+</html>

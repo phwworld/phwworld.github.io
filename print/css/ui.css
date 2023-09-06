@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./common.css);
+@import url(./fonts.css);
+
+.img-down{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.pdf-down{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.half-hl{
+    background: linear-gradient(to top, #f8f173 50%, transparent 50%);
+}
+
+.page-wrap{
+    position: relative;
+    height: 900px;
+    padding: 0 17.5px 22.5px;
+    page-break-after: always;
+}
+.page-wrap .head{
+    display: flex;
+    justify-content: space-between;
+    height: 55.5px;
+    margin-bottom: 18.75px;
+    background: url(../img/header.png) no-repeat;
+    background-size: 100% 100%;
+}
+.page-wrap .head p{
+    padding: 24.25px 0 0 32.5px;
+    font-size: 17.5px;
+    font-weight: 700;
+    color: #fff;
+}
+.page-wrap .head div{
+    display: flex;
+    height: 20px;
+    margin: 26.25px 17.5px 0 0;
+    padding: 0 14px 0 14px;
+    border-radius: 25px;
+    background: #fff;
+}
+.page-wrap .head div span{
+    line-height: 20px;
+    font-size: 9.5px;
+}
+.page-wrap .head div span + span{
+    position: relative;
+    margin-left: 12.5px;
+    padding-left: 13px;
+}
+.page-wrap .head div span + span::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 10px;
+    background: #d7dee5;
+    transform: translateY(-50%);
+}
+
+.tit-area{
+    margin-bottom: 18.75px;
+}
+.tit-area p{
+    height: 20px;
+    font-size: 15.5px;
+    font-weight: 700;
+}
+.tit-area p span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    background: #ffc400;
+}
+
+.guide{
+    display: flex;
+    padding: 11.25px 0 11.25px 25px;
+    border: 1px solid #d7dee5;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px #0000001a;
+}
+.guide > p{
+    display: flex;
+    align-items: center;
+    width: 139.5px;
+    border-right: 1px solid #d7dee5;
+}
+.guide > p span{
+    display: inline-block;
+    margin-right: 17.5px;
+}
+.guide > p span img{
+    width: 50px;
+    height: 50px;
+}
+.guide > div{
+    width: 80%;
+    padding-left: 20px;
+}
+.guide > div p{
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.guide > div ul{
+    padding-top: 7px;
+}
+.guide > div ul li{
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.result{
+    margin-top: 13px;
+    border: 1px solid #000;
+    border-radius: 7.5px;
+}
+.result table thead th{
+    font-size: 10px;
+    font-weight: 400;
+}
+.result table thead th.num{
+    font-size: 9px;
+}
+.result table tbody td{
+    font-size: 11.5px;
+    text-align: center;
+}
+.result table thead th,
+.result table tbody td{
+    padding: 3.5px 0;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px 0 0 1px;
+}
+.result table thead tr:first-child th{
+    border-width: 0 0 0 1px;
+}
+.result table thead tr:first-child th:first-child{
+    border-width: 0 0 0 0;
+}
+.result table tbody td:first-child{
+    border-width: 1px 0 0 0;
+}
+.result table .dot{
+    border-left: 1px dotted #000;
+}
+.result table .normal{
+    background-color: #e6eaefcc;
+}
+
+.solutions{
+    margin-top: 12.5px;
+    border: 1px solid #d7dee5;
+    border-radius: 7.5px;
+    background: linear-gradient(to right, #d6f9ec 15%, transparent 15%);
+    box-shadow: 0px 1px 2px #0000001a;
+}
+.solutions > div{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #d7dee5;
+}
+.solutions > div:first-child{
+    border-top: 0;
+}
+.solutions > div p{
+    width: 15%;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+.solutions > div p span{
+    display: inline-block;
+    width: 50px;
+    height: 22.5px;
+    border-radius: 15px;
+    font-size: 9px;
+    line-height: 22.5px;
+    background: #fff;
+}
+.solutions > div div{
+    width: 85%;
+    padding: 7.5px 15px;
+    font-size: 9.5px;
+    line-height: 1.5;
+}
+.solutions > div div strong{
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    color: #00c488;   
+}
+
+.page-wrap .review{
+    position: absolute;
+    left: 17.5px;
+    right: 17.5px;
+    bottom: 22.5px;
+    padding: 7.5px 15px;
+    border-radius: 7.5px;
+    font-size: 11px;
+    line-height: 1.5;
+    background: #FFFCC9;
+}
+.page-wrap .review p{
+    position: relative;
+    padding: 0 0 7.5px 21.5px;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1;
+}
+.page-wrap .review p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15.5px;
+    height: 12.5px;
+    background: url(../img/ico_review.png) no-repeat;
+    background-size: 100%;
+}
+
+.page-wrap .paging{
+    position: absolute;
+    left: 0;
+    bottom: 5.5px;
+    width: 100%;
+    text-align: center;
+}
+
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        background: #fff;
+    }
+
+    .page-wrap {
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+    }
+}
