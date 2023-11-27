@@ -39,6 +39,10 @@ header h1{height: 7.5rem;background: url(../imgs/logo.png) no-repeat left top / 
 section img{width: 100%}
 
 /* brand */
+.brand .visual-swiper{height: 46.55rem;background: url(../imgs/brand_sec1_2.png) no-repeat 0 0 / 100% 100%}
+.brand .visual-swiper .swiper{width: 100%;height: 100%}
+.brand .visual-swiper .swiper-slide{display: flex;width: 100%;height: 100%;align-items: center;justify-content: center}
+.brand .visual-swiper .swiper-slide img{width: 100%;height: 100%}
 .brand .video{height: 21rem}
 .brand .brand-detail{position: relative}
 .brand .brand-detail a{position: absolute;top: 22.38%;left: 24.13%;width: 52.13%;height: 35.82%}
@@ -66,6 +70,8 @@ section img{width: 100%}
 @media screen and (min-width: 750px) {
     #wrap{width: 75rem;margin: 0 auto}
     header{position: fixed;top: 0;left: 50%;width: 75rem;transform: translateX(-50%)}
+    .brand .visual-swiper{height: 93.1rem}
+    .brand .video{height: 42rem}
     .brand .package-swiper{height: 31.4rem}
     .brand .package-swiper .swiper-button-prev,
     .brand .package-swiper .swiper-button-next{top: 8.4rem;width: 8.5rem;height: 8.5rem}
