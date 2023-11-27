@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* Style */
+/*  mobile only
+html{font-size: 10px}
+body{overflow-x: hidden;font-size: 1rem}
+body.hidden{position: fixed;overflow-y: hidden;touch-action: none}
+*/
+
+.clear{clear: both}
+.clear::after{content: "";display: block;clear: both}
+caption > div,
+legend,
+.hide,
+.blind{overflow: hidden;display: block;position: absolute;border: 0;width: 1px;height: 1px;clip: rect(1px, 1px, 1px, 1px)}
+
+.skip{position: absolute;left: 0;right: 0;top: -100%;transition: all .5s;line-height: 5rem;background: var(--black);color: var(--white);text-align: center;z-index: 100}
+.skip:focus{top: 0}
+
+html{font-size: 62.5%}
+body{font-family: 'Pretendard';font-size: 1.4rem;font-weight: 400;line-height: 1.5}
+
+#wrap{padding-top: 13.5rem}
+
+header{position: fixed;top: 0;left: 0;width: 100%;z-index: 100}
+header h1{height: 7.5rem;background: url(../imgs/logo.png) no-repeat left top / 100% 100%}
+#gnd{display: flex;height: 6rem}
+#gnd li{flex-basis: 25%}
+#gnd li a{position: relative;display: block;height: 6rem;font-size: 1.6rem;color: rgba(255, 255, 255, .7);line-height: 6rem;text-align: center;background: #25080c}
+#gnd li a.active{font-weight: 700}
+#gnd li a::before{content: '';position: absolute;top: 50%;left: 0;width: 0.1rem;height: 3.8rem;background-color: #421d1d;transform: translateY(-50%)}
+#gnd li:first-child a::before,
+#gnd li a.active::before{display: none}
+#gnd li:nth-of-type(1) a.active{color: rgba(255, 255, 255);background: #421d1d}
+#gnd li:nth-of-type(2) a.active{color: rgba(37, 8, 12);background: #fff3da}
+#gnd li:nth-of-type(3) a.active{color: rgba(37, 8, 12);background: #fff3da}
+#gnd li:nth-of-type(4) a.active{color: rgba(37, 8, 12);background: #fff3da}
+
+section img{width: 100%}
+
+/* brand */
+.brand .video{height: 21rem}
+.brand .brand-detail{position: relative}
+.brand .brand-detail a{position: absolute;top: 22.38%;left: 24.13%;width: 52.13%;height: 35.82%}
+.brand .package-swiper{height: 15.7rem;padding: 8.915% 9.46% 0;background: url(../imgs/brand_sec4_3.png) no-repeat 0 0 / 100% 100%;overflow: hidden}
+.brand .package-swiper .swiper{width: 100%; height: 100%}
+.brand .package-swiper .swiper-button-prev,
+.brand .package-swiper .swiper-button-next{top: 4.2rem;left: 0;width: 4.25rem;height: 4.25rem;margin-top: 0;transform: translateY(-50%)}
+.brand .package-swiper .swiper-button-prev:after,
+.brand .package-swiper .swiper-button-next:after{font-size: 0}
+.brand .package-swiper .swiper-button-prev{background: url(../imgs/package_swiper_prev.png) no-repeat center center / 0.85rem 1.5rem}
+.brand .package-swiper .swiper-button-next{left: auto;right: 0;background: url(../imgs/package_swiper_next.png) no-repeat center center / 0.85rem 1.5rem}
+.brand .package-swiper .swiper-slide{text-align: center}
+.brand .package-swiper .swiper-slide img{width: 21.35rem}
+
+/* event */
+.event .event_instargram{position: relative}
+.event .event_instargram a{position: absolute;top: 0%;left: 24.13%;width: 52.13%;height: 100%}
+.event .wallpaper-down{display: flex;justify-content:space-between;height: 23.1rem;padding: 0 6.66%;background: url(../imgs/event_sec2_2.png) no-repeat 0 0 / 100% 100%}
+.event .wallpaper-down div{width: 26.66%}
+.event .wallpaper-down div img{width: 100%}
+.event .wallpaper-down div button{display: block;width: 100%;height: 3.6rem;margin-top: 1.5rem;padding-left: 1.3rem;background: #2e1313;text-align: left}
+.event .wallpaper-down div button span{position: relative;display: block;font-size: 1.2rem;font-weight: 700;color: #fff;line-height: 3.6rem}
+.event .wallpaper-down div button span::after{content: '';position: absolute;top: 50%;right: 1.2rem;width: 1.1rem;height: 1.1rem;background: url(../imgs/ico_down.png) no-repeat 0 0 / 100% 100%;transform: translateY(-50%)}
+
+@media screen and (min-width: 750px) {
+    #wrap{width: 75rem;margin: 0 auto}
+    header{position: fixed;top: 0;left: 50%;width: 75rem;transform: translateX(-50%)}
+    .brand .package-swiper{height: 31.4rem}
+    .brand .package-swiper .swiper-button-prev,
+    .brand .package-swiper .swiper-button-next{top: 8.4rem;width: 8.5rem;height: 8.5rem}
+    .brand .package-swiper .swiper-button-prev{background-size: 1.7rem 3rem}
+    .brand .package-swiper .swiper-button-next{background-size: 1.7rem 3rem}
+    .brand .package-swiper .swiper-slide img{width: 42.7rem}
+    .event .wallpaper-down{height: 46.2rem;}
+    .event .wallpaper-down div button{height: 7.2rem;margin-top: 3rem;padding-left: 2.6rem}
+    .event .wallpaper-down div button span{font-size: 2.4rem;line-height: 7.2rem}
+    .event .wallpaper-down div button span::after{right: 2.4rem;width: 2.2rem;height: 2.2rem}
+}
