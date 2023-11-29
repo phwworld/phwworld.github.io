@@ -23,7 +23,8 @@ body{font-family: 'Pretendard';font-size: 1.4rem;font-weight: 400;line-height: 1
 #wrap{padding-top: 13.5rem}
 
 header{position: fixed;top: 0;left: 0;width: 100%;z-index: 100}
-header h1{height: 7.5rem;background: url(../imgs/logo.png) no-repeat left top / 100% 100%}
+header h1{display: flex;justify-content: center;align-items:center;height: 7.5rem;background: #fff}
+header h1 a img{width: 10.25rem}
 #gnd{display: flex;height: 6rem}
 #gnd li{flex-basis: 25%}
 #gnd li a{position: relative;display: block;height: 6rem;font-size: 1.6rem;color: rgba(255, 255, 255, .7);line-height: 6rem;text-align: center;background: #25080c}
@@ -31,14 +32,15 @@ header h1{height: 7.5rem;background: url(../imgs/logo.png) no-repeat left top / 
 #gnd li a::before{content: '';position: absolute;top: 50%;left: 0;width: 0.1rem;height: 3.8rem;background-color: #421d1d;transform: translateY(-50%)}
 #gnd li:first-child a::before,
 #gnd li a.active::before{display: none}
-#gnd li:nth-of-type(1) a.active{color: rgba(255, 255, 255);background: #421d1d}
-#gnd li:nth-of-type(2) a.active{color: rgba(37, 8, 12);background: #fff3da}
-#gnd li:nth-of-type(3) a.active{color: rgba(37, 8, 12);background: #fff3da}
+#gnd li:nth-of-type(1) a.active{color: #fff;background: #421d1d}
+#gnd li:nth-of-type(2) a.active{color: #fff;background: #2e1313}
+#gnd li:nth-of-type(3) a.active{color: rgba(37, 8, 12);background: #c2ad7b}
 #gnd li:nth-of-type(4) a.active{color: rgba(37, 8, 12);background: #fff3da}
 
 section img{width: 100%}
 
 /* brand */
+.brand .sec1{font-size: 0;line-height: 0}
 .brand .visual-swiper{height: 46.55rem;background: url(../imgs/brand_sec1_2.png) no-repeat 0 0 / 100% 100%}
 .brand .visual-swiper .swiper{width: 100%;height: 100%}
 .brand .visual-swiper .swiper-slide{display: flex;width: 100%;height: 100%;align-items: center;justify-content: center}
@@ -56,16 +58,31 @@ section img{width: 100%}
 .brand .package-swiper .swiper-button-next{left: auto;right: 0;background: url(../imgs/package_swiper_next.png) no-repeat center center / 0.85rem 1.5rem}
 .brand .package-swiper .swiper-slide{text-align: center}
 .brand .package-swiper .swiper-slide img{width: 21.35rem}
+.brand a{display: block;vertical-align: top;font-size: 0;line-height: 0}
+
 
 /* event */
 .event .event_instargram{position: relative}
 .event .event_instargram a{position: absolute;top: 0%;left: 24.13%;width: 52.13%;height: 100%}
-.event .wallpaper-down{display: flex;justify-content:space-between;height: 23.1rem;padding: 0 6.66%;background: url(../imgs/event_sec2_2.png) no-repeat 0 0 / 100% 100%}
+.event .wallpaper-down{display: flex;justify-content:space-between;height: 15rem;padding: 0 6.66%;background: url(../imgs/event_sec1_3.png) no-repeat 0 0 / 100% 100%}
 .event .wallpaper-down div{width: 26.66%}
 .event .wallpaper-down div img{width: 100%}
 .event .wallpaper-down div button{display: block;width: 100%;height: 3.6rem;margin-top: 1.5rem;padding-left: 1.3rem;background: #2e1313;text-align: left}
 .event .wallpaper-down div button span{position: relative;display: block;font-size: 1.2rem;font-weight: 700;color: #fff;line-height: 3.6rem}
 .event .wallpaper-down div button span::after{content: '';position: absolute;top: 50%;right: 1.2rem;width: 1.1rem;height: 1.1rem;background: url(../imgs/ico_down.png) no-repeat 0 0 / 100% 100%;transform: translateY(-50%)}
+
+/* store */
+.store .d-day{position: relative}
+.store .d-day .day1,
+.store .d-day .day2{position: absolute;top: 40.98%;display: flex;align-items: center;justify-content: center;width: 16.31%;height:59.01%;font-size: 5.3rem;font-weight: 700;color: #fff6c7}
+.store .d-day .day1{left: 45.6%}
+.store .d-day .day2{left: 63.2%}
+.store .store-detail{position: relative}
+.store .store-detail .link1{position: absolute;top: 0;left: 24%;width: 52.13%;height: 39.66%}
+.store .store-detail .link2{position: absolute;bottom: 0;left: 24%;width: 52.13%;height: 39.66%}
+
+/* purchase */
+.purchase{}
 
 @media screen and (min-width: 750px) {
     #wrap{width: 75rem;margin: 0 auto}
@@ -78,8 +95,10 @@ section img{width: 100%}
     .brand .package-swiper .swiper-button-prev{background-size: 1.7rem 3rem}
     .brand .package-swiper .swiper-button-next{background-size: 1.7rem 3rem}
     .brand .package-swiper .swiper-slide img{width: 42.7rem}
-    .event .wallpaper-down{height: 46.2rem;}
+    .event .wallpaper-down{height: 30rem;}
     .event .wallpaper-down div button{height: 7.2rem;margin-top: 3rem;padding-left: 2.6rem}
     .event .wallpaper-down div button span{font-size: 2.4rem;line-height: 7.2rem}
     .event .wallpaper-down div button span::after{right: 2.4rem;width: 2.2rem;height: 2.2rem}
+    .store .d-day .day1,
+    .store .d-day .day2{font-size: 10.6rem}
 }
