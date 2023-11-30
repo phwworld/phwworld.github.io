@@ -11,6 +11,9 @@ $(document).ready(function () {
     // brand package
     const packageSwiper = new Swiper('.package-swiper .swiper', {
         loop: true,
+        autoplay: {
+            delay: 3000
+        },
         // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',
