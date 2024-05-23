@@ -155,22 +155,22 @@ $("document").ready(function () {
 
     canvasInit("parking_map.png");
 
-    $(".scale").on("click", function () {
-        if ($(this).data("scale") === "down") {
-            scaling = "down";
-        } else {
-            scaling = "up";
-        }
+    // $(".scale").on("click", function () {
+    //     if ($(this).data("scale") === "down") {
+    //         scaling = "down";
+    //     } else {
+    //         scaling = "up";
+    //     }
 
-        scaleDraw = requestAnimationFrame(scaleCanvas);
+    //     scaleDraw = requestAnimationFrame(scaleCanvas);
 
-        scale < maxScale
-            ? $('[data-scale="up"]').removeAttr("disabled")
-            : $('[data-scale="up"]').attr("disabled", "true");
-        scale >= 1
-            ? $('[data-scale="down"]').removeAttr("disabled")
-            : $('[data-scale="down"]').attr("disabled", "true");
-    });
+    //     scale < maxScale
+    //         ? $('[data-scale="up"]').removeAttr("disabled")
+    //         : $('[data-scale="up"]').attr("disabled", "true");
+    //     scale >= 1
+    //         ? $('[data-scale="down"]').removeAttr("disabled")
+    //         : $('[data-scale="down"]').attr("disabled", "true");
+    // });
 
     $("canvas")
         .on("mousedown touchstart", function (e) {
