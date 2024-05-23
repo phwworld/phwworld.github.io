@@ -23,12 +23,13 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
         $(function () {
-            $(document).ready(function () {
-                $('input:first-child').focus();
-                setTimeout(function () {
-                    $('input:first-child').click();
-                }, 1000);
-            });
+
+        });
+        $(document).ready(function () {
+            $('input:first-child').focus().css('background', 'red');
+            setTimeout(function () {
+                $('input:first-child').click();
+            }, 1000);
         });
     </script>
 </body>
