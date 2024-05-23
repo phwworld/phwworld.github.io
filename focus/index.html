@@ -26,10 +26,17 @@
 
         });
         $(document).ready(function () {
-            $('input:first-child').focus().css('background', 'red');
-            setTimeout(function () {
-                $('input:first-child').click();
-            }, 1000);
+            let firstInput = $('input:first-child');
+            if (firstInput.length) {
+                firstInput.focus();
+
+                // For iOS Safari
+                setTimeout(function () {
+                    if (firstInput.length) {
+                        firstInput.click();
+                    }
+                }, 1000);
+            }
         });
     </script>
 </body>
