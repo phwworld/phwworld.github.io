@@ -59,24 +59,13 @@
         transform: rotateX(0) rotateY(0) rotateZ(0);
       }
 
-      25% {
-        bottom: 50%;
-        transform: rotateY(90deg) rotateZ(90deg);
-      }
-
       50% {
-        bottom: 75%;
-        transform: rotateY(180deg) rotateZ(180deg);
-      }
-
-      75% {
-        bottom: 50%;
-        transform: rotateY(270deg) rotateZ(270deg);
+        bottom: 60%;
       }
 
       100% {
         bottom: 0;
-        transform: rotateX(1980deg) rotateY(0) rotateZ(0);
+        transform: rotateX(1980deg) rotateY(2160deg) rotateZ(2160deg);
       }
     }
 
@@ -86,24 +75,13 @@
         transform: rotateX(0) rotateY(0) rotateZ(0);
       }
 
-      25% {
-        bottom: 50%;
-        transform: rotateY(90deg) rotateZ(90deg);
-      }
-
       50% {
-        bottom: 75%;
-        transform: rotateY(180deg) rotateZ(180deg);
-      }
-
-      75% {
-        bottom: 50%;
-        transform: rotateY(270deg) rotateZ(270deg);
+        bottom: 60%;
       }
 
       100% {
         bottom: 0;
-        transform: rotateX(2160deg) rotateY(0) rotateZ(0);
+        transform: rotateX(2160deg) rotateY(2160deg) rotateZ(2160deg);
       }
     }
   </style>
@@ -129,14 +107,16 @@
 
     startBtn.addEventListener('click', () => {
       let i = Math.floor(Math.random() * 2);
+      console.log(i);
+
       coin.style.animation = 'none';
-      if (i) {
+      if (i === 0) {
         setTimeout(function () {
-          coin.style.animation = 'spin-heads 2s forwards';
+          coin.style.animation = 'spin-heads 3s forwards';
         }, 100);
       } else {
         setTimeout(function () {
-          coin.style.animation = 'spin-tails 2s forwards';
+          coin.style.animation = 'spin-tails 3s forwards';
         }, 100);
       }
     })
