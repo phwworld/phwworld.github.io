@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WMF Fusiontec Campaign Page</title>
+  <link rel="stylesheet" href="./asset/css/style.css">
+</head>
+
+<body>
+  <div id="wrap" class="page5">
+    <div class="cont1">
+      <p class="tit">
+        퓨전테크의 천연 미네랄 소재의​<br>
+        <strong>원적외선의 효과</strong>로​<br>
+        <strong>맛과 향, 영양이 더욱 건강하게 유지</strong>됩니다.​
+      </p>
+      <p class="txt1">
+        <img src="./asset/image/img_page5_1.png" alt="">
+        <span>* 인증기관 : 한국건설생활환경시험연구원(2021년)</span>
+      </p>
+    </div>
+    <div class="cont2">
+      <p class="txt">퓨전테크 제품 더 알아보기​</p>
+      <p class="img">
+        <img src="./asset/image/img_page5_2.png" alt="">
+      </p>
+    </div>
+    <a href="./index.html" class="btn-floating"></a>
+  </div>
+
+  <script>
+    let idleTimer;
+    const idleTimeLimit = 60000; // 1 minute = 60000 milliseconds
+    const statusElement = document.getElementById('wrap');
+
+    function resetIdleTimer() {
+      // Clear any previous timer
+      clearTimeout(idleTimer);
+
+      // Set new timer
+      idleTimer = setTimeout(() => {
+        window.location.href = 'index.html';
+        // Here you can add more actions to perform when idle for 1 minute
+      }, idleTimeLimit);
+
+    }
+
+    // Event listener for mousemove to reset the idle timer
+    window.addEventListener('mousemove', resetIdleTimer);
+
+    // Initialize the idle timer when the page loads
+    resetIdleTimer();
+  </script>
+</body>
+
+</html>
