@@ -153,11 +153,12 @@ body {
 .page1 .img div span::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   width: 26px;
   height: 25px;
   background: url(../image/icon_check.png);
+  transform: translateY(-50%);
 }
 .page1 .img div span strong {
   color: var(--point);
@@ -223,11 +224,12 @@ body {
 .page3 .txt1 span::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   width: 34px;
   height: 32px;
   background: url(../image/icon_check2.png);
+  transform: translateY(-50%);
 }
 .page3 .txt1 span strong {
   color: var(--point);
