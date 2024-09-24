@@ -17,6 +17,7 @@ body {
   font-weight: 400;
   font-size: 17px;
   color: #fff;
+  letter-spacing: -0.75px;
 }
 
 .btn-next {
@@ -80,7 +81,7 @@ body {
   position: relative;
   align-items: flex-end;
   padding-bottom: 80px;
-  background: url(../image/bg_intro.jpg) no-repeat;
+  background: url(../image/bg_intro.jpg) no-repeat center center;
   background-size: cover;
 }
 .intro h1 {
@@ -123,6 +124,9 @@ body {
   margin-top: 30px;
   font-size: 32px;
   font-weight: 300;
+}
+.page1 .txt1 span {
+  color: var(--point);
 }
 .page1 .txt2 {
   margin-top: 30px;
