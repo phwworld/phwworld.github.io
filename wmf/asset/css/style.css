@@ -114,9 +114,10 @@ body {
 }
 
 .page1 .tit {
-  font-size: 62px;
+  font-size: 64px;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -4px;
+  word-spacing: -4px;
 }
 .page1 .tit span {
   color: var(--point);
