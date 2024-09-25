@@ -114,8 +114,9 @@ body {
 }
 
 .page1 .tit {
-  font-size: 64px;
+  font-size: 62px;
   font-weight: 700;
+  letter-spacing: -1px;
 }
 .page1 .tit span {
   color: var(--point);
