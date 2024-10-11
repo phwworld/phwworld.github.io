@@ -9,49 +9,62 @@
 <body>
     <ul class="tree">
         <li class="parent">
-            <details>
-                <summary>menu1</summary>
+            <input type="checkbox">
+            <span>menu1</span>
+            <div class="children">
                 <ul>
                     <li>menu1_1</li>
                     <li>menu1_2</li>
                     <li>menu1_3</li>
                     <li>menu1_4</li>
                 </ul>
-            </details>            
+            </div>            
         </li>
         <li class="parent">
-            <details>
-                <summary>menu2</summary>
+            <span>menu2</span>
+            <div class="children">
                 <ul>
                     <li>menu2_1</li>
-                    <li>menu2_2</li>
+                    <li class="depth">
+                        <div class="children">
+                            <span>menu2_2</span>
+                            <ul>
+                                <li>menu2_2_1</li>
+                                <li>menu2_2_2</li>
+                                <li>menu2_2_3</li>
+                                <li>menu2_2_4</li>
+                            </ul>
+                        </div>   
+                    </li>
                     <li>menu2_3</li>
                     <li>menu2_4</li>
                 </ul>
-            </details>  
+            </div>  
         </li>
         <li class="parent">
-            <details>
-                <summary>menu3</summary>
+            <span>menu3</span>
+            <div class="children">
                 <ul>
                     <li>menu3_1</li>
                     <li>menu3_2</li>
                     <li>menu3_3</li>
                     <li>menu3_4</li>
                 </ul>
-            </details>  
+            </div>  
         </li>
         <li class="parent">
-            <details>
-                <summary>menu4</summary>
+            <span>menu4</span>
+            <div class="children">
                 <ul>
                     <li>menu4_1</li>
                     <li>menu4_2</li>
                     <li>menu4_3</li>
                     <li>menu4_4</li>
                 </ul>
-            </details> 
+            </div> 
         </li>
     </ul>
+
+    <script src="menutree.js"></script>
 </body>
 </html>

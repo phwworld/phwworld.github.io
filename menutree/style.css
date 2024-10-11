@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+.tree{
+    width: 100px;
+    margin: 50px auto 0;
+}
+.tree li{
+    position: relative;
+    padding: 4px 0;
+}
+.tree li::before,
+.tree li::after{
+    content: "";
+    position: absolute;
+    left: -28px;
+    /* background: #000; */
+}
+.tree li::before{
+    top: 12px;
+    width: 16px;
+    height: 1px;
+    border-bottom: 1px dashed #000;
+}
+.tree li::after{
+    top: -14px;
+    width: 1px;
+    height: 26px;
+    border-left: 1px dashed #000;
+}
+.tree li.parent::after{
+    top: 12px;
+    height: 100%;
+}
+.tree li.parent::before,
+.tree li.parent:last-child:after{
+    content: none;
+}
+.tree li input[type="checkbox"]{
+    position: absolute;
+    top: 4px;
+    left: -15px;
+    width: 18px;
+    height: 18px;
+}
+.tree .children{
+    position: relative;
+    margin: 0 auto
+}
+.tree .children > ul{
+    /* padding: 15px; */
+    padding-left: 15px;
+}
+.tree span{
+    position: relative;
+    display: block;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.tree span::before{
+    content: "+";
+    position: absolute;
+    top: 0;
+    left: -36px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 18px;
+    color: #fff;
+    border-radius: 50%;;
+    background: skyblue;
+    z-index: 10;
+}
+.tree .children.open > span::before{
+    content: "-";
+}
+.tree .depth .children::before{
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -28px;
+    width: 1px;
+    height: calc(100% - 18px);
+    border-left: 1px dashed #000;
+}
+
+.tree .children{
+    display: none;
+}
+.tree .children.open{
+    display: block;
+}
