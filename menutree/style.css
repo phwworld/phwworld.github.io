@@ -1,105 +1,107 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 
-.tree{
-    width: 100px;
-    margin: 50px auto 0;
+.tree {
+  width: 100px;
+  margin: 50px auto 0;
 }
-.tree li{
-    position: relative;
-    /* padding: 4px 0; */
+.tree li {
+  position: relative;
+  /* padding: 4px 0; */
 }
 .tree li::before,
-.tree li::after{
-    content: "";
-    position: absolute;
-    left: -30px;
-    /* background: #000; */
+.tree li::after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  /* background: #000; */
 }
-.tree li::before{
-    top: 12px;
-    width: 16px;
-    height: 1px;
-    border-bottom: 1px dashed #000;
+.tree li::before {
+  top: 12px;
+  width: 16px;
+  height: 1px;
+  border-bottom: 2px dashed #000;
 }
-.tree li::after{
-    top: -14px;
-    width: 1px;
-    height: 26px;
-    border-left: 1px dashed #000;
+.tree li::after {
+  top: -14px;
+  width: 1px;
+  height: 26px;
+  border-left: 2px dashed #000;
 }
-.tree li.parent::after{
-    top: 12px;
-    height: 100%;
+.tree li.parent::after {
+  top: 12px;
+  height: 100%;
 }
 .tree li.parent::before,
-.tree li.parent:last-child:after{
-    content: none;
+.tree li.parent:last-child:after {
+  content: none;
 }
-.tree li input[type="checkbox"]{
-    position: absolute;
-    top: 4px;
-    left: -15px;
-    width: 18px;
-    height: 18px;
-    z-index: 10;
+.tree li input[type="checkbox"] {
+  position: absolute;
+  top: 4px;
+  left: -15px;
+  width: 18px;
+  height: 18px;
+  z-index: 10;
 }
-.tree .children{
-    position: relative;
-    margin: 0 auto
+.tree .children {
+  position: relative;
+  margin: 0 auto;
 }
-.tree .children > ul{
-    /* padding: 15px; */
-    padding-left: 22px;
+.tree .children > ul {
+  /* padding: 15px; */
+  padding-left: 22px;
 }
-.tree span{
-    position: relative;
-    display: block;
-    cursor: pointer;
-    padding-left: 10px;
-    line-height: 24px;
+.tree span {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding-left: 10px;
+  line-height: 24px;
 }
-.tree span::before{
-    content: "+";
-    position: absolute;
-    top: 4px;
-    left: -38px;
-    width: 18px;
-    height: 18px;
-    text-align: center;
-    font-weight: 700;
-    line-height: 16px;
-    color: #fff;
-    border-radius: 50%;;
-    background: skyblue;
-    z-index: 10;
+.tree li span::before,
+.tree .children .depth > span::before {
+  content: "+";
+  position: absolute;
+  top: 4px;
+  left: -38px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
+  border-radius: 50%;
+  background: skyblue;
+  z-index: 10;
 }
-.tree .children.open > span::before{
-    content: "-";
+.tree .children span::before {
+  content: none;
 }
-.tree .depth .children::before{
-    content: "";
-    position: absolute;
-    top: 9px;
-    left: -40px;
-    width: 1px;
-    height: calc(100% - 18px);
-    border-left: 1px dashed #000;
-}
-.tree .children li{
-    padding-left: 10px;
-}
-.tree .children span::before{
-    left: -34px;
+.tree .depth .children::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 1px;
+  height: calc(100% - 18px);
+  border-left: 2px dashed #000;
 }
 
+.tree .children span::before {
+  left: -48px;
+}
+/* .tree .children span::before {
+  left: -34px;
+} */
+/* 
 .tree .parent > .children{
     display: none;
 }
@@ -109,4 +111,4 @@ li{
 .tree .parent > .children > .children,
 .tree .parent > .children.open ul li .children{
     display: none;
-}
+} */

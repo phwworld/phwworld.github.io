@@ -1,74 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <ul class="tree">
-        <li class="parent">
-            <input type="checkbox">
-            <span>menu1</span>
-            <div class="children">
+      <li class="parent">
+        <input type="checkbox" />
+        <span>menu1</span>
+        <div class="children">
+          <ul>
+            <li><input type="checkbox" /><span>menu1_1</span></li>
+            <li><input type="checkbox" /><span>menu1_2</span></li>
+            <li><input type="checkbox" /><span>menu1_3</span></li>
+            <li><input type="checkbox" /><span>menu1_4</span></li>
+          </ul>
+        </div>
+      </li>
+      <li class="parent">
+        <input type="checkbox" />
+        <span>menu2</span>
+        <div class="children">
+          <ul>
+            <li><input type="checkbox" /><span>menu2_1</span></li>
+            <li class="depth">
+              <input type="checkbox" />
+              <span>menu2_2</span>
+              <div class="children">
                 <ul>
-                    <li><input type="checkbox">menu1_1</li>
-                    <li><input type="checkbox">menu1_2</li>
-                    <li><input type="checkbox">menu1_3</li>
-                    <li><input type="checkbox">menu1_4</li>
+                  <li><input type="checkbox" /><span>menu2_2_1</span></li>
+                  <li><input type="checkbox" /><span>menu2_2_2</span></li>
+                  <li><input type="checkbox" /><span>menu2_2_3</span></li>
+                  <li><input type="checkbox" /><span>menu2_2_4</span></li>
                 </ul>
-            </div>            
-        </li>
-        <li class="parent">
-            <input type="checkbox">
-            <span>menu2</span>
-            <div class="children">
-                <ul>
-                    <li><input type="checkbox">menu2_1</li>
-                    <li class="depth">
-                        <input type="checkbox">
-                        <span>menu2_2</span>
-                        <div class="children">
-                            <ul>
-                                <li><input type="checkbox">menu2_2_1</li>
-                                <li><input type="checkbox">menu2_2_2</li>
-                                <li><input type="checkbox">menu2_2_3</li>
-                                <li><input type="checkbox">menu2_2_4</li>
-                            </ul>
-                        </div>   
-                    </li>
-                    <li><input type="checkbox">menu2_3</li>
-                    <li><input type="checkbox">menu2_4</li>
-                </ul>
-            </div>  
-        </li>
-        <li class="parent">
-            <input type="checkbox">
-            <span>menu3</span>
-            <div class="children">
-                <ul>
-                    <li><input type="checkbox">menu3_1</li>
-                    <li><input type="checkbox">menu3_2</li>
-                    <li><input type="checkbox">menu3_3</li>
-                    <li><input type="checkbox">menu3_4</li>
-                </ul>
-            </div>  
-        </li>
-        <li class="parent">
-            <input type="checkbox">
-            <span>menu4</span>
-            <div class="children">
-                <ul>
-                    <li><input type="checkbox">menu4_1</li>
-                    <li><input type="checkbox">menu4_2</li>
-                    <li><input type="checkbox">menu4_3</li>
-                    <li><input type="checkbox">menu4_4</li>
-                </ul>
-            </div> 
-        </li>
+              </div>
+            </li>
+            <li><input type="checkbox" /><span>menu2_3</span></li>
+            <li><input type="checkbox" /><span>menu2_4</span></li>
+          </ul>
+        </div>
+      </li>
     </ul>
 
     <script src="menutree.js"></script>
-</body>
+  </body>
 </html>
