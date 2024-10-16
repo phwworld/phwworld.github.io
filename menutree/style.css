@@ -94,21 +94,3 @@ li {
   height: calc(100% - 18px);
   border-left: 2px dashed #000;
 }
-
-.tree .children span::before {
-  left: -48px;
-}
-/* .tree .children span::before {
-  left: -34px;
-} */
-/* 
-.tree .parent > .children{
-    display: none;
-}
-.tree .parent > .children.open{
-    display: block;
-}
-.tree .parent > .children > .children,
-.tree .parent > .children.open ul li .children{
-    display: none;
-} */
