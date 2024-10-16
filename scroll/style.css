@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.box1 {
+  height: 100px;
+  background: yellow;
+}
+.box2 {
+  position: relative;
+  height: 500px;
+  background: green;
+  & p {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  & p.fade {
+    opacity: 0;
+  }
+}
+.box3 {
+  height: 1000px;
+  background: pink;
+}
