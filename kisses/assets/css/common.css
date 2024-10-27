@@ -183,6 +183,9 @@ main > h2:first-child {
 }
 
 /* index 임시 */
+.main {
+  background-color: #ffe3d9;
+}
 .main header {
   height: 21.3333vw;
   background: #fff;
@@ -193,7 +196,7 @@ main > h2:first-child {
 .main main {
   position: relative;
   height: 195.2vw;
-  background: url(../image/bg_index.png);
+  background-image: url(../image/bg_index.png);
   background-size: 100%;
 }
 .main main .btn {
