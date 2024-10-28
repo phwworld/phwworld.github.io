@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 105dvh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  background: yellow;
+}
+.item {
+  position: relative;
+}
+.item .unit {
+  position: absolute;
+  top: 12px;
+  left: 103px;
+  transition: all 0.1s ease-out;
+}

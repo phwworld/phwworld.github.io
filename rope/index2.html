@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add ScrollY to Element Top</title>
+  <style>
+    #movingElement {
+      position: absolute;
+      left: 50px;
+      width: 100px;
+      height: 100px;
+      background-color: teal;
+      top: 0px;
+      /* Initial top position */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="movingElement">Scroll Me!</div>
+  <div style="height: 2000px;"></div> <!-- Extra height to enable scrolling -->
+
+  <script>
+    let lastScrollY = 0;
+
+    window.addEventListener('scroll', () => {
+      const movingElement = document.getElementById('movingElement');
+      const scrollY = window.scrollY;
+
+      // Calculate the new top position by adding the difference in scroll position
+      const newTop = parseInt(movingElement.style.top || 0) + (scrollY - lastScrollY);
+      movingElement.style.top = `${newTop}px`;
+
+      // Update lastScrollY to the current scroll position
+      lastScrollY = scrollY;
+    });
+  </script>
+
+</body>
+
+</html>
