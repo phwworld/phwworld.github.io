@@ -6,9 +6,8 @@ window.addEventListener('scroll', () => {
   const docHeight = document.documentElement.scrollHeight; // Total document height
   const unit = document.querySelector('.unit');
   const newTop = parseInt(unit.style.top || 12) + (scrollY - lastScrollY);
-  const newLeft = newTop + 91;
+  const newLeft = parseInt(unit.style.top || 12) + (scrollY - lastScrollY) + 103;
   unit.style.top = `${newTop}px`;
   unit.style.left = `${newLeft}px`;
-  // console.log(`Scroll Percentage: ${scrollPercent.toFixed(2)}%`);
   lastScrollY = scrollY;
 })
