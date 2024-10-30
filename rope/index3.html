@@ -1,30 +1,96 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{padding: 0; margin: 0;}
-        .container{display: flex; justify-content: center; align-items: center; height: 100dvh; background: yellow;}
-        .drag-container{position: relative; width: 50%; height: 30dvh; background: pink;}
-        .drag-item{position: absolute; top: 10px; right: 10px; width: 5dvh; height: 5dvh; background: red;}
-        .drop-area{position: absolute; top: -20px; right: -50px; width: 5dvh; height: 5dvh; background: blue;}
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .drag-container {
+            position: relative;
+        }
+
+        .draggable {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .drop-zone {
+            margin-top: 20px;
+            width: 100%;
+            height: 200px;
+            background-color: #ecf0f1;
+            text-align: center;
+            line-height: 200px;
+            border: 2px dashed #bdc3c7;
+        }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="drag-container">
-            <div class="drag-item" draggable="true"></div>
-            <div class="drop-area"></div>
-        </div>
+    <div class="drag-container">
+        <div id="draggable" class="draggable">Drag me</div>
     </div>
 
+    <div class="drop-zone">Drop here</div>
+
+
     <script>
-        const $dropArea = document.querySelector('.drop-area');
-        $dragItem.addEventListener('dragenter', () => {
-            alert('이벤트 시작');
+        // Select elements
+        const draggable = document.getElementById('draggable');
+        const dropZone = document.querySelector('.drop-zone');
+
+        // Define initial positions
+        let offsetX, offsetY;
+
+        draggable.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.targetTouches[0];
+
+            // Calculate the offset of the touch point from the element’s top-left corner
+            offsetX = touch.clientX - draggable.getBoundingClientRect().left;
+            offsetY = touch.clientY - draggable.getBoundingClientRect().top;
+
+            draggable.style.position = 'absolute';
+        }, { passive: false });
+
+        draggable.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const touch = e.targetTouches[0];
+
+            // Move the element by adjusting its position based on the touch movement
+            draggable.style.left = `${touch.clientX - offsetX}px`;
+            draggable.style.top = `${touch.clientY - offsetY}px`;
+        }, { passive: false });
+
+        draggable.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            const draggableRect = draggable.getBoundingClientRect();
+            const dropZoneRect = dropZone.getBoundingClientRect();
+
+            // Check if the draggable element is within the drop zone
+            if (
+                draggableRect.left >= dropZoneRect.left &&
+                draggableRect.top >= dropZoneRect.top &&
+                draggableRect.right <= dropZoneRect.right &&
+                draggableRect.bottom <= dropZoneRect.bottom
+            ) {
+                alert();
+            }
         });
+
     </script>
 </body>
+
 </html>

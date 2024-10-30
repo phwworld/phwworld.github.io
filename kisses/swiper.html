@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERSHEY`S KISSES</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/css/ui.css">
+  <style>
+    .swiper {
+      height: 100dvh;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide" style="background: skyblue;">Slide 1</div>
+      <div class="swiper-slide" style="background: orange;">Slide 2</div>
+      <div class="swiper-slide" style="background: yellow;">Slide 3</div>
+      <div class="swiper-slide" style="background: violet;">Slide 4</div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <footer class="hide">
+    footer 영역
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      loop: false,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      on: {
+        slideChangeTransitionStart() {
+          const isLastSlide = swiper.slides.length === (swiper.activeIndex + 1); // 마지막 슬라이드인지 체크
+          const footer = document.querySelector('footer');
+          if (isLastSlide) { // 마지막 슬라이드면
+            footer.classList.remove('hide');
+          } else {
+            footer.classList.add('hide');
+          }
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>
