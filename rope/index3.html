@@ -7,13 +7,14 @@
     <style>
         *{padding: 0; margin: 0;}
         .container{display: flex; justify-content: center; align-items: center; height: 100dvh; background: yellow;}
-        .item{width: 50%; height: 30dvh; background: pink;}
+        .drag-container{position: relative; width: 50%; height: 30dvh; background: pink;}
+        .drag-item{position: absolute; top: 10px; right: 10px; width: 5dvh; height: 5dvh; background: red;}
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="item">
-
+        <div class="drag-container">
+            <div class="drag-item"></div>
         </div>
     </div>
 </body>
