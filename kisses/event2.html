@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERSHEY`S KISSES</title>
+  <link rel="stylesheet" href="./assets/css/ui.css">
+  <style>
+    .drag-container {
+      position: relative;
+      height: 100dvh;
+      background: url(./assets/image/img_event.png) no-repeat;
+      background-size: 100%;
+    }
+
+    .draggable {
+      position: absolute;
+      top: 78.3333vw;
+      left: 55vw;
+      width: 8vw;
+      height: 8vw;
+      border: 1px solid blue;
+    }
+
+    .drop-zone {
+      position: absolute;
+      top: 78.3333vw;
+      right: 0;
+      width: 16vw;
+      height: 16vw;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="drag-container">
+    <div class="draggable"></div>
+    <div class="drop-zone"></div>
+  </div>
+
+  <script>
+    // Select elements
+    const draggable = document.querySelector('.draggable');
+    const dropZone = document.querySelector('.drop-zone');
+
+    // Define initial positions
+    let offsetX, offsetY, isDragging = false;
+
+    draggable.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      const touch = e.targetTouches[0];
+
+      // Calculate the offset of the touch point from the element’s top-left corner
+      offsetX = touch.clientX - draggable.getBoundingClientRect().left;
+      offsetY = touch.clientY - draggable.getBoundingClientRect().top;
+
+      draggable.style.position = 'absolute';
+    }, { passive: false });
+
+    draggable.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const touch = e.targetTouches[0];
+
+      // Move the element by adjusting its position based on the touch movement
+      draggable.style.left = `${touch.clientX - offsetX}px`;
+      draggable.style.top = `${touch.clientY - offsetY}px`;
+    }, { passive: false });
+
+    draggable.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      checkDropZone();
+    });
+
+    // --- Mouse Events for PC ---
+
+    draggable.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      isDragging = true;
+      offsetX = e.clientX - draggable.getBoundingClientRect().left;
+      offsetY = e.clientY - draggable.getBoundingClientRect().top;
+      draggable.style.position = 'absolute';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        draggable.style.left = `${e.clientX - offsetX}px`;
+        draggable.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      if (isDragging) {
+        isDragging = false;
+        checkDropZone();
+      }
+    });
+
+    // Function to check if the draggable element is inside the drop zone
+    function checkDropZone() {
+      const draggableRect = draggable.getBoundingClientRect();
+      const dropZoneRect = dropZone.getBoundingClientRect();
+
+      if (
+        draggableRect.left >= dropZoneRect.left &&
+        draggableRect.top >= dropZoneRect.top &&
+        draggableRect.right <= dropZoneRect.right &&
+        draggableRect.bottom <= dropZoneRect.bottom
+      ) {
+        alert('이벤트 시작!');
+      }
+    }
+  </script>
+</body>
+
+</html>
