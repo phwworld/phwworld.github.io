@@ -9,13 +9,22 @@
         .container{display: flex; justify-content: center; align-items: center; height: 100dvh; background: yellow;}
         .drag-container{position: relative; width: 50%; height: 30dvh; background: pink;}
         .drag-item{position: absolute; top: 10px; right: 10px; width: 5dvh; height: 5dvh; background: red;}
+        .drop-area{position: absolute; top: -20px; right: -50px; width: 5dvh; height: 5dvh; background: blue;}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="drag-container">
-            <div class="drag-item"></div>
+            <div class="drag-item" draggable="true"></div>
+            <div class="drop-area"></div>
         </div>
     </div>
+
+    <script>
+        const $dropArea = document.querySelector('.drop-area');
+        $dragItem.addEventListener('dragenter', () => {
+            alert('이벤트 시작');
+        });
+    </script>
 </body>
 </html>
