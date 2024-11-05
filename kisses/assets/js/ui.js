@@ -1,3 +1,5 @@
+const footer = document.querySelector('.foot');
+
 // 가이드 팝업 숨김
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
@@ -11,6 +13,15 @@ const swiper = new Swiper('.index.swiper', {
   loop: false,
   pagination: {
     el: '.index .swiper-pagination',
+  },
+  on: {
+    slideChangeTransitionStart: function () {
+      if (this.realIndex === 3) { // 마지막 슬라이드면
+        footer.classList.remove('hide');
+      } else {
+        footer.classList.add('hide');
+      }
+    }
   },
   initialSlide: 0,
 });
@@ -38,5 +49,14 @@ const modalClose = (event) => {
     }, 300);
   } else {
     modalPop.classList.add('hide');
+  }
+}
+
+const indexSlideSet = () => {
+  const urlParams = new URL(location.href).searchParams;
+  const slide = urlParams.get('slide');
+  if (slide === '4') {
+    swiper.slideTo(3, 10, false);
+    footer.classList.remove('hide');
   }
 }
