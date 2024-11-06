@@ -62,6 +62,8 @@ const indexSlideSet = () => {
   const urlParams = new URL(location.href).searchParams;
   const slide = urlParams.get('slide');
   if (slide === '4') {
+    const guidePopup = document.querySelector('.guide');
+    guidePopup.classList.add('hide');
     swiper.slideTo(3, 10, false);
     footer.classList.remove('hide');
   }
