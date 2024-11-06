@@ -21,6 +21,11 @@ const swiper = new Swiper('.index.swiper', {
       } else {
         footer.classList.add('hide');
       }
+      const mainVideo = document.querySelector('#main-video');
+      const btnPlay = mainVideo.nextElementSibling;
+      mainVideo.load();
+      btnPlay.style.display = 'block';
+
     }
   },
   initialSlide: 0,
@@ -52,6 +57,7 @@ const modalClose = (event) => {
   }
 }
 
+// main url check slide change
 const indexSlideSet = () => {
   const urlParams = new URL(location.href).searchParams;
   const slide = urlParams.get('slide');
@@ -59,4 +65,18 @@ const indexSlideSet = () => {
     swiper.slideTo(3, 10, false);
     footer.classList.remove('hide');
   }
+}
+
+// video play
+const videoPlay = (event) => {
+  let video = event.previousElementSibling;
+  event.style.display = 'none';
+  // video.defaultPlaybackRate = 16.0;
+  video.play();
+  video.addEventListener('ended', (event) => {
+    // video.currentTime = 0;
+    video.load();
+    let btnPlay = event.target.nextElementSibling;
+    btnPlay.style.display = 'block';
+  })
 }
