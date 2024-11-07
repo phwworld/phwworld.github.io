@@ -331,28 +331,28 @@ header button {
   left: 28vw;/* 105px */
   width: 4.2667vw;/* 16px */
   height: 4.5333vw;/* 17px */
-  animation: float1 1s linear infinite alternate;
+  /* animation: float1 1s linear infinite alternate; */
 }
 .index .swiper-slide:nth-of-type(2) .motion2 {
-  top: 43.2vw;
-  left: 18.6666vw;
-  width: 8.5333vw;
-  height: 9.3333vw;
-  animation: float1 1s linear infinite alternate;
+  top: 90.9333vw;/* 314px */
+  left: 84.8vw;/* 318px */
+  width: 5.8667vw;/* 22px */
+  height: 6.1333vw;/* 23px */
+  /* animation: float1 1s linear infinite alternate; */
 }
 .index .swiper-slide:nth-of-type(2) .motion3 {
-  top: 43.2vw;
-  left: 18.6666vw;
-  width: 8.5333vw;
-  height: 9.3333vw;
-  animation: float1 1s linear infinite alternate;
+  top: 107.2vw;/* 402px */
+  left: 9.8667vw;/* 37px */
+  width: 9.6vw;/* 36px */
+  height: 9.6vw;/* 36px */
+  /* animation: float1 1s linear infinite alternate; */
 }
 .index .swiper-slide:nth-of-type(2) .motion4 {
-  top: 43.2vw;
-  left: 18.6666vw;
-  width: 8.5333vw;
-  height: 9.3333vw;
-  animation: float1 1s linear infinite alternate;
+  top: 109.8667vw;/* 412px */
+  left: 63.2vw;/* 237px */
+  width: 13.3333vw;/* 50px */
+  height: 9.8667vw;/* 37px */
+  /* animation: float1 1s linear infinite alternate; */
 }
 
 @-webkit-keyframes float1 {
