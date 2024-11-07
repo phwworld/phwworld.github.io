@@ -354,6 +354,27 @@ header button {
   height: 9.8667vw;/* 37px */
   /* animation: float1 1s linear infinite alternate; */
 }
+.index .swiper-slide:nth-of-type(3) .motion1 {
+  top: 67.7333vw;/* 254px */
+  left: 12vw;/* 45px */
+  width: 4.8vw;/* 18px */
+  height: 4.5333vw;/* 17px */
+  /* animation: float1 1s linear infinite alternate; */
+}
+.index .swiper-slide:nth-of-type(3) .motion2 {
+  top: 56.8vw;/* 213px */
+  left: 89.0667vw;/* 334px */
+  width: 5.8667vw;/* 22px */
+  height: 6.1333vw;/* 23px */
+  /* animation: float1 1s linear infinite alternate; */
+}
+.index .swiper-slide:nth-of-type(3) .motion3 {
+  top: 137.3333vw;/* 515px */
+  left: 13.0667vw;/* 49px */
+  width: 3.7333vw;/* 14px */
+  height: 4vw;/* 15px */
+  /* animation: float1 1s linear infinite alternate; */
+}
 .index .swiper-slide:nth-of-type(4) .motion1 {
   top: -2.4vw;/* 9px */
   left: 69.6vw;/* 261px */
