@@ -354,6 +354,27 @@ header button {
   height: 9.8667vw;/* 37px */
   /* animation: float1 1s linear infinite alternate; */
 }
+.index .swiper-slide:nth-of-type(4) .motion1 {
+  top: -2.4vw;/* 9px */
+  left: 69.6vw;/* 261px */
+  width: 9.3333vw;/* 35px */
+  height: 9.8667vw;/* 37px */
+  /* animation: float1 1s linear infinite alternate; */
+}
+.index .swiper-slide:nth-of-type(4) .motion2 {
+  top: 26.9333vw;/* 101px */
+  left: 13.0667vw;/* 49px */
+  width: 6.6667vw;/* 25px */
+  height: 6.4vw;/* 24px */
+  /* animation: float1 1s linear infinite alternate; */
+}
+.index .swiper-slide:nth-of-type(4) .motion3 {
+  top: 108.5333vw;/* 407px */
+  left: 71.4667vw;/* 268px */
+  width: 3.7333vw;/* 14px */
+  height: 4vw;/* 15px */
+  /* animation: float1 1s linear infinite alternate; */
+}
 
 @-webkit-keyframes float1 {
   /* 162, 70 */
