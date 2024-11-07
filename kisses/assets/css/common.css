@@ -327,10 +327,10 @@ header button {
   animation: bounce 1s linear infinite alternate;
 }
 .index .swiper-slide:nth-of-type(2) .motion1 {
-  top: 43.2vw;
-  left: 18.6666vw;
-  width: 8.5333vw;
-  height: 9.3333vw;
+  top: 62.6667vw;/* 235px */
+  left: 28vw;/* 105px */
+  width: 4.2667vw;/* 16px */
+  height: 4.5333vw;/* 17px */
   animation: float1 1s linear infinite alternate;
 }
 .index .swiper-slide:nth-of-type(2) .motion2 {
