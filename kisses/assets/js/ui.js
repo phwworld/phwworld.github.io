@@ -76,8 +76,8 @@ const videoPlay = (event) => {
   // video.defaultPlaybackRate = 16.0;
   video.play();
   video.addEventListener('ended', (event) => {
-    video.currentTime = 0;
-    // video.load();
+    // video.currentTime = 0;
+    video.load();
     let btnPlay = event.target.nextElementSibling;
     btnPlay.style.display = 'block';
   })
