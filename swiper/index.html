@@ -14,16 +14,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100dvh;
+            min-height: 100dvh;
             background: yellow;
         }
         .swiper{
             width: 100%;
-            height: 90vw;
             background: lightblue;
         }
         .swiper .swiper-slide{
+            position: relative;
             text-align: center;
+        }
+        .swiper .swiper-slide .cont{
+            height: 186.6667vw;
+        }
+        .swiper .swiper-slide .motion{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: 1px solid red
         }
 
         footer{
@@ -37,8 +46,8 @@
                 width: 750px;
                 margin: 0 auto;
             }
-            .swiper{
-                height: 400px;
+            .swiper .swiper-slide .cont{
+                height: 700px;
             }
             footer{
                 width: 750px;
@@ -52,13 +61,21 @@
     <div class="main-wrap">
         <div class="swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
-              <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">
+                    Slide 1
+                    <div class="cont">
+
+                    </div>
+                    <div class="motion">
+                        motion
+                    </div>
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
             </div>
             <div class="swiper-pagination"></div>
-          </div>
+        </div>
     </div>
 
     <footer>
