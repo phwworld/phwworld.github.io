@@ -1,4 +1,13 @@
 const footer = document.querySelector('.foot');
+const dimmShow = () => {
+  const dimm = document.createElement('div');
+  dimm.classList.add('dimm');
+  document.body.appendChild(dimm);
+}
+const dimmHide = () => {
+  const dimm = document.querySelector('.dimm');
+  dimm.remove();
+}
 
 // 가이드 팝업 숨김
 document.addEventListener("DOMContentLoaded", function () {
@@ -26,20 +35,19 @@ const swiper = new Swiper('.index.swiper', {
       mainVideo.load();
       btnPlay.style.display = 'block';
 
-    }
+    },
   },
-  initialSlide: 0,
+  initialSlide: 3,
 });
 
-const dimm = document.querySelector('.dimm');
 // modal open
 const modalOpen = (name) => {
   let modalPop = document.querySelector(`.${name}`);
   if (name === 'modal-join') {
-    dimm.classList.remove('hide');
+    dimmShow();
     modalPop.classList.remove('hidden');
   } else {
-    modalPop.classList.remove('hide');
+    dimmShow();
   }
 }
 
@@ -50,7 +58,7 @@ const modalClose = (event) => {
   if (modalPop.classList.contains('modal-join')) {
     modalPop.classList.add('hidden');
     setTimeout(() => {
-      dimm.classList.add('hide');
+      dimmHide();
     }, 300);
   } else {
     modalPop.classList.add('hide');
@@ -69,16 +77,34 @@ const indexSlideSet = () => {
   }
 }
 
+// video pause
+const videoPause = (event) => {
+  const video = event.previousElementSibling.previousElementSibling;
+  const playBtn = event.previousElementSibling;
+  video.pause();
+  playBtn.style.display = 'block';
+  event.style.display = 'none';
+}
+
 // video play
 const videoPlay = (event) => {
-  let video = event.previousElementSibling;
+  const video = event.previousElementSibling;
+  const mask = event.nextElementSibling.nextElementSibling;
   event.style.display = 'none';
-  // video.defaultPlaybackRate = 16.0;
+  mask.style.display = 'none';
   video.play();
+
+  video.addEventListener('click', (event) => {
+    const btnPause = document.querySelector('.pause');
+    const videoMask = document.querySelector('.video .mask');
+    videoMask.style.display = 'block';
+    btnPause.style.display = 'block';
+  });
+
   video.addEventListener('ended', (event) => {
     // video.currentTime = 0;
     video.load();
-    let btnPlay = event.target.nextElementSibling;
+    const btnPlay = event.target.nextElementSibling;
     btnPlay.style.display = 'block';
-  })
+  });
 }
