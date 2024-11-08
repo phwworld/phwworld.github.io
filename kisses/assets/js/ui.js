@@ -86,6 +86,15 @@ const videoPause = (event) => {
   event.style.display = 'none';
 }
 
+//vidoe continue
+const videoContinue = (event) => {
+  const btnPause = event.previousElementSibling;
+  if (btnPause.style.display === 'block') {
+    event.style.display = 'none';
+    btnPause.style.display = 'none';
+  }
+}
+
 // video play
 const videoPlay = (event) => {
   const video = event.previousElementSibling;
@@ -95,8 +104,8 @@ const videoPlay = (event) => {
   video.play();
 
   video.addEventListener('click', (event) => {
-    const btnPause = document.querySelector('.pause');
-    const videoMask = document.querySelector('.video .mask');
+    const btnPause = event.target.nextElementSibling.nextElementSibling;
+    const videoMask = event.target.nextElementSibling.nextElementSibling.nextElementSibling;
     videoMask.style.display = 'block';
     btnPause.style.display = 'block';
   });
