@@ -104,10 +104,12 @@ const videoPlay = (event) => {
   video.play();
 
   video.addEventListener('click', (event) => {
-    const btnPause = event.target.nextElementSibling.nextElementSibling;
-    const videoMask = event.target.nextElementSibling.nextElementSibling.nextElementSibling;
-    videoMask.style.display = 'block';
-    btnPause.style.display = 'block';
+    if (!event.target.paused) {
+      const btnPause = event.target.nextElementSibling.nextElementSibling;
+      const videoMask = event.target.nextElementSibling.nextElementSibling.nextElementSibling;
+      videoMask.style.display = 'block';
+      btnPause.style.display = 'block';
+    }
   });
 
   video.addEventListener('ended', (event) => {
