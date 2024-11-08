@@ -30,14 +30,13 @@ const swiper = new Swiper('.index.swiper', {
       } else {
         footer.classList.add('hide');
       }
-      const mainVideo = document.querySelector('#main-video');
-      const btnPlay = mainVideo.nextElementSibling;
-      mainVideo.load();
-      btnPlay.style.display = 'block';
-
+      if (this.realIndex === 2) {
+        const firstTabcont = document.querySelector('.tab-cont .cont .img span');
+        firstTabcont.classList.add('show');
+      }
     },
   },
-  initialSlide: 3,
+  initialSlide: 0,
 });
 
 // modal open
@@ -46,6 +45,8 @@ const modalOpen = (name) => {
   if (name === 'modal-join') {
     dimmShow();
     modalPop.classList.remove('hidden');
+  } else if (name === 'modal-info') {
+    modalPop.classList.remove('hide');
   } else {
     dimmShow();
   }
@@ -65,17 +66,30 @@ const modalClose = (event) => {
   }
 }
 
-// main url check slide change
-const indexSlideSet = () => {
-  const urlParams = new URL(location.href).searchParams;
-  const slide = urlParams.get('slide');
-  if (slide === '4') {
-    const guidePopup = document.querySelector('.guide');
-    guidePopup.classList.add('hide');
-    swiper.slideTo(3, 10, false);
-    footer.classList.remove('hide');
-  }
-}
+// tab
+const tabMenu = document.querySelectorAll('.tab a');
+const tabCont = document.querySelectorAll('.tab-cont .cont');
+tabMenu.forEach((item, index) => {
+  item.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    tabMenu.forEach((cont) => {
+      cont.classList.remove('act');
+    });
+    tabCont.forEach((cont) => {
+      cont.style.display = 'none';
+      cont.children[0].children[1].classList.remove('show');
+    });
+
+    tabMenu[index].classList.add('act');
+    tabCont[index].style.display = 'block';
+    setTimeout(() => {
+      tabCont[index].children[0].children[1].classList.add('show');
+    }, 100);
+
+  })
+});
+
 
 // video pause
 const videoPause = (event) => {
@@ -118,4 +132,16 @@ const videoPlay = (event) => {
     const btnPlay = event.target.nextElementSibling;
     btnPlay.style.display = 'block';
   });
+}
+
+// main url check slide change
+const indexSlideSet = () => {
+  const urlParams = new URL(location.href).searchParams;
+  const slide = urlParams.get('slide');
+  if (slide === '4') {
+    const guidePopup = document.querySelector('.guide');
+    guidePopup.classList.add('hide');
+    swiper.slideTo(3, 10, false);
+    footer.classList.remove('hide');
+  }
 }
