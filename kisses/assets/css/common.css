@@ -80,9 +80,9 @@ input[type="text"]:read-only {
   width: 48%;
   height: 14.4vw; /* 54 */
   border-radius: 3.2vw; /* 12 */
-  /* font-size: 20px;
+  font-size: 20px;
   text-align: center;
-  line-height: 3.2vw; */
+  line-height: 14.4vw;
 }
 .btn-large span {
   display: inline-block;
@@ -794,9 +794,15 @@ header button {
 .result .btn-area .btn-white span::before {
   background-image: url(../image/icon_share.png);
 }
-
 .result + .banner img {
   width: 100%;
+}
+
+.return .btn-area .btn-large span {
+  padding-left: 0;
+}
+.return .btn-area .btn-large span::before {
+  display: none;
 }
 
 /* modal */
