@@ -54,6 +54,29 @@
   </main>
   <!-- //main -->
 
+  <!-- 이벤트 소개 레이어 -->
+  <div class="modal-info hide">
+    <img src="./assets/image/event_info1.jpg" alt="">
+    <img src="./assets/image/event_info2.jpg" alt="">
+    <img src="./assets/image/event_info3.jpg" alt="">
+    <div class="video">
+      <video id="main-video" playsinline poster="./assets/image/video_poster.png">
+        <source src="https://connectkisses.com/assets/video/film.mp4">
+      </video>
+      <button type="button" class="play" onclick="videoPlay(this);"></button>
+      <button type="button" class="pause" onclick="videoPause(this);"></button>
+      <div class="mask" onclick="videoContinue(this);"></div>
+    </div>
+    <img src="./assets/image/event_info4.jpg" alt="">
+    <img src="./assets/image/event_info5.jpg" alt="">
+    <img src="./assets/image/event_info6.jpg" alt="">
+    <img src="./assets/image/event_info7.jpg" alt="">
+    <img src="./assets/image/event_info8.jpg" alt="">
+    <img src="./assets/image/event_info9.jpg" alt="">
+
+    <button type="button" class="close" onclick="modalClose(this)"></button>
+  </div>
+
   <script src="./assets/js/ui.js"></script>
   <script>
     eventSlider();
