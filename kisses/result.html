@@ -18,9 +18,84 @@
 
   <!-- main -->
   <main>
-    결과 페이지
+    <!-- result -->
+    <div class="result">
+      <div class="inner">
+        <p class="tit">
+          <strong>스르륵~~</strong><br>
+          <strong>키세스</strong>가 전하는<br>
+          <strong>행운</strong> 메시지
+        </p>
+
+        <!-- message -->
+        <div class="message">
+          <img src="./assets/image/result_img1.png" alt="">
+          <!-- 메시지 내용 -->
+          <div class="message-box">
+            <p>
+              축하할 만한 기쁜 일이 생길 거에요.<br>
+              좋은 시간을 나누세요☺
+            </p>
+          </div>
+          <!-- //메시지 내용 -->
+        </div>
+        <!-- //message -->
+
+        <!-- btn-area -->
+        <div class="btn-area">
+          <a href="event.html" class="btn-large btn-blue"><span>다시하기</span></a>
+          <a href="javascript:;" class="btn-large btn-white" onclick="modalOpen('modal-share');"><span>내 결과
+              공유</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- //result -->
+
+    <!-- banner -->
+    <div class="banner">
+      <a href="javscript:;">
+        <img src="./assets/image/result_banner.png" alt="">
+      </a>
+    </div>
   </main>
   <!-- //main -->
+
+  <!-- 공유하기 -->
+  <div class="modal modal-share hide">
+    <div class="modal-cont">
+      <div>
+        <div class="share">
+          <button type="button">카카오톡 공유</button>
+          <button type="button">URL 복사</button>
+        </div>
+
+        <button type="button" class="close" onclick="modalClose('modal-share')">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 이벤트 소개 레이어 -->
+  <div class="modal-info hide">
+    <img src="./assets/image/event_info1.jpg" alt="">
+    <img src="./assets/image/event_info2.jpg" alt="">
+    <img src="./assets/image/event_info3.jpg" alt="">
+    <div class="video">
+      <video playsinline poster="./assets/image/video_poster.png">
+        <source src="https://connectkisses.com/assets/video/film.mp4">
+      </video>
+      <button type="button" class="play" onclick="videoPlay(this);"></button>
+      <button type="button" class="pause" onclick="videoPause(this);"></button>
+      <div class="mask" onclick="videoContinue(this);"></div>
+    </div>
+    <img src="./assets/image/event_info4.jpg" alt="">
+    <img src="./assets/image/event_info5.jpg" alt="">
+    <img src="./assets/image/event_info6.jpg" alt="">
+    <img src="./assets/image/event_info7.jpg" alt="">
+    <img src="./assets/image/event_info8.jpg" alt="">
+    <img src="./assets/image/event_info9.jpg" alt="">
+
+    <button type="button" class="close" onclick="modalClose(this)"></button>
+  </div>
 
   <script src="./assets/js/ui.js"></script>
 </body>

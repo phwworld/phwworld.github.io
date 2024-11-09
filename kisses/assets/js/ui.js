@@ -59,7 +59,7 @@ const modalOpen = (name) => {
   if (name === 'modal-join') {
     dimmShow();
     modalPop.classList.remove('hidden');
-  } else if (name === 'modal-info') {
+  } else if (name === 'modal-info' || name === 'modal-share') {
     modalPop.classList.remove('hide');
   } else {
     dimmShow();
@@ -68,15 +68,25 @@ const modalOpen = (name) => {
 
 // modal close
 const modalClose = (event) => {
-  let modalPop = event.parentNode;
-  modalPop.classList.contains
-  if (modalPop.classList.contains('modal-join')) {
-    modalPop.classList.add('hidden');
-    setTimeout(() => {
-      dimmHide();
-    }, 300);
-  } else {
+  if (event === 'modal-share') {
+    let modalPop = document.querySelector('.modal-share');
     modalPop.classList.add('hide');
+  } else {
+    let modalPop = event.parentNode;
+    if (modalPop.classList.contains('modal-join')) {
+      modalPop.classList.add('hidden');
+      setTimeout(() => {
+        dimmHide();
+      }, 300);
+    } else if (modalPop.classList.contains('modal-info')) {
+      const modalVideo = document.querySelector('.modal-info .video video');
+      const btnPlay = modalVideo.nextElementSibling;
+      modalVideo.load();
+      btnPlay.style.display = 'block';
+      modalPop.classList.add('hide');
+    } else {
+      modalPop.classList.add('hide');
+    }
   }
 }
 
