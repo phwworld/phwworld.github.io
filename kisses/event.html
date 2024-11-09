@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERSHEY`S KISSES</title>
+  <link rel="stylesheet" href="./assets/css/ui.css">
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <h1><img src="./assets/image/logo.png" alt=""></h1>
+    <button type="button" onclick="modalOpen('modal-info')"></button>
+  </header>
+  <!-- //header -->
+
+  <!-- main -->
+  <main>
+    <!-- event -->
+    <div class="event">
+      <!-- inner -->
+      <div class="inner">
+        <img src="./assets/image/event_img1.png" alt="">
+        <div class="slide">
+          <div class="emotion_state">
+            <div class="range_wrap">
+              <div class="range_fill" style="width: 0;"></div>
+              <input class="emotion_range" type="range" min="0" max="100" step="10" value="0">
+            </div>
+            <p class="text" style="padding-top: 10px;text-align: center;"></p>
+          </div>
+          <div class="img1">
+            <img src="./assets/image/event_img3.png" alt="">
+          </div>
+        </div>
+
+        <div class="motion">
+          <img src="./assets/image/event_img2.png" alt="">
+        </div>
+      </div>
+      <!-- //inner -->
+
+      <!-- loading -->
+      <div class="loading">
+        <video playsinline muted>
+          <source src="https://connectkisses.com/assets/video/motion.mp4">
+        </video>
+      </div>
+      <!-- //loading -->
+    </div>
+    <!-- //event -->
+  </main>
+  <!-- //main -->
+
+  <script src="./assets/js/ui.js"></script>
+  <script>
+    eventSlider();
+  </script>
+</body>
+
+</html>

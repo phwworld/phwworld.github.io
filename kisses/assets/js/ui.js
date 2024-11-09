@@ -10,34 +10,48 @@ const dimmHide = () => {
 }
 
 // 가이드 팝업 숨김
-document.addEventListener("DOMContentLoaded", function () {
-  setTimeout(() => {
-    const guidePopup = document.querySelector('.guide');
-    guidePopup.classList.add('hide');
-  }, 3000);
-});
+const guidePopup = document.querySelector('.guide');
+if (guidePopup) {
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+      const guidePopup = document.querySelector('.guide');
+      guidePopup.classList.add('hide');
+    }, 3000);
+  });
+}
+
 
 // main swiper
-const swiper = new Swiper('.index.swiper', {
-  loop: false,
-  pagination: {
-    el: '.index .swiper-pagination',
-  },
-  on: {
-    slideChangeTransitionStart: function () {
-      if (this.realIndex === 3) { // 마지막 슬라이드면
-        footer.classList.remove('hide');
-      } else {
-        footer.classList.add('hide');
-      }
-      if (this.realIndex === 2) {
-        const firstTabcont = document.querySelector('.tab-cont .cont .img span');
-        firstTabcont.classList.add('show');
-      }
+const indexSwiper = document.querySelector('.index.swiper');
+if (indexSwiper) {
+  const swiper = new Swiper('.index.swiper', {
+    loop: false,
+    pagination: {
+      el: '.index .swiper-pagination',
     },
-  },
-  initialSlide: 3,
-});
+    on: {
+      slideChangeTransitionStart: function () {
+        const firstTabcont = document.querySelector('.tab-cont .cont .img span');
+        const video = document.querySelector('#main-video');
+        const btnPlay = video.nextElementSibling;
+        if (this.realIndex === 3) { // 마지막 슬라이드면
+          footer.classList.remove('hide');
+        } else {
+          footer.classList.add('hide');
+          video.load();
+          btnPlay.style.display = 'block';
+        }
+        if (this.realIndex === 2) {
+          firstTabcont.classList.add('show');
+        } else {
+          firstTabcont.classList.remove('show');
+        }
+      },
+    },
+    initialSlide: 0,
+  });
+}
+
 
 // modal open
 const modalOpen = (name) => {
@@ -144,4 +158,33 @@ const indexSlideSet = () => {
     swiper.slideTo(3, 10, false);
     footer.classList.remove('hide');
   }
+}
+
+// event slider
+const eventSlider = () => {
+  const newUrl = `result.html`; /* 주소변경 필요 */
+  const eventLoading = document.querySelector('.event .loading');
+  const loadingVideo = eventLoading.querySelector('video');
+
+  const emotionRange = document.querySelector('.emotion_range');
+
+  const rangeValue = () => {
+    const emotionState = document.querySelector('.emotion_state');
+    const stateText = emotionState.querySelector('.state_text');
+    const rangeFill = emotionState.querySelector('.range_fill');
+    const value = Number(emotionRange.value);
+    const text = emotionState.querySelector('.text');
+
+    rangeFill.style.width = `${emotionRange.value}%`;
+
+    if (value === 100) {
+      eventLoading.style.display = 'block';
+      loadingVideo.play();
+    }
+    loadingVideo.addEventListener('ended', (event) => {
+      window.location.replace(newUrl);
+    });
+  }
+
+  emotionRange.addEventListener("input", rangeValue)
 }
