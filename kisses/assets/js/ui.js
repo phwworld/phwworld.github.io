@@ -36,7 +36,7 @@ const swiper = new Swiper('.index.swiper', {
       }
     },
   },
-  initialSlide: 0,
+  initialSlide: 3,
 });
 
 // modal open
