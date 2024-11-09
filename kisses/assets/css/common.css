@@ -152,7 +152,7 @@ header button {
 .index .swiper-pagination {
   /* bottom: 39.467vw; */
   top: 50%;
-  margin-top: calc(100dvh * 0.41);
+  margin-top: calc(100dvh * 0.43);
 }
 .index .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
