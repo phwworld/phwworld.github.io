@@ -880,26 +880,6 @@ header button {
     height: 60px;
   }
 
-  .event-info .info {
-    /* padding: 5.3333vw 5.3333vw 13.3333vw;
-  background-color: #fde7d9;
-  background-image: url(../image/bg_event_info.png);
-  background-repeat: none;
-  background-position: left bottom; */
-  }
-  .event-info .notice {
-    padding: 80px 40px 100px;
-  }
-  .event-info .notice p {
-    margin-bottom: 20px;
-    font-size: 40px;
-    letter-spacing: -2px;
-  }
-  .event-info .notice li {
-    font-size: 24px;
-    letter-spacing: -1.2px;
-  }
-
   /* guide */
   .modal.guide .modal-cont > div {
     padding: 340px 0 122px;

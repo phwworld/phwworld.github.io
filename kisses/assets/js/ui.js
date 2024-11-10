@@ -59,7 +59,10 @@ const modalOpen = (name) => {
   if (name === 'modal-join') {
     dimmShow();
     modalPop.classList.remove('hidden');
-  } else if (name === 'modal-info' || name === 'modal-share') {
+  } else if (name === 'modal-info') {
+    dimmShow();
+    modalPop.classList.remove('hide');
+  } else if (name === 'modal-share') {
     modalPop.classList.remove('hide');
   } else {
     dimmShow();
@@ -84,6 +87,7 @@ const modalClose = (event) => {
       modalVideo.load();
       btnPlay.style.display = 'block';
       modalPop.classList.add('hide');
+      dimmHide();
     } else {
       modalPop.classList.add('hide');
     }
