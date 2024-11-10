@@ -42,7 +42,7 @@ const modalClose = (event) => {
     let modalPop = document.querySelector('.modal-share');
     modalPop.classList.add('hide');
   } else {
-    let modalPop = event.parentNode;
+    let modalPop = event.parentElement;
     if (modalPop.classList.contains('modal-join')) {
       modalPop.classList.add('hidden');
       setTimeout(() => {
