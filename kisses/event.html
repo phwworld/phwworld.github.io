@@ -79,6 +79,32 @@
 
   <script src="./assets/js/ui.js"></script>
   <script>
+    const eventSlider = () => {
+      const newUrl = `result.html`; /* 주소변경 필요 */
+      const eventLoading = document.querySelector('.event .loading');
+      const loadingVideo = eventLoading.querySelector('video');
+      const emotionRange = document.querySelector('.emotion_range');
+      const rangeValue = () => {
+        const emotionState = document.querySelector('.emotion_state');
+        const stateText = emotionState.querySelector('.state_text');
+        const rangeFill = emotionState.querySelector('.range_fill');
+        const value = Number(emotionRange.value);
+        const text = emotionState.querySelector('.text');
+
+        rangeFill.style.width = `${emotionRange.value}%`;
+
+        if (value === 100) {
+          eventLoading.style.display = 'block';
+          loadingVideo.play();
+        }
+        loadingVideo.addEventListener('ended', (event) => {
+          window.location.replace(newUrl);
+        });
+      }
+
+      emotionRange.addEventListener("input", rangeValue)
+    }
+
     eventSlider();
   </script>
 </body>

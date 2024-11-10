@@ -20,39 +20,6 @@ if (guidePopup) {
   });
 }
 
-
-// main swiper
-const indexSwiper = document.querySelector('.index.swiper');
-if (indexSwiper) {
-  const swiper = new Swiper('.index.swiper', {
-    loop: false,
-    pagination: {
-      el: '.index .swiper-pagination',
-    },
-    on: {
-      slideChangeTransitionStart: function () {
-        const firstTabcont = document.querySelector('.tab-cont .cont .img span');
-        const video = document.querySelector('#main-video');
-        const btnPlay = video.nextElementSibling;
-        if (this.realIndex === 3) { // 마지막 슬라이드면
-          footer.classList.remove('hide');
-        } else {
-          footer.classList.add('hide');
-          video.load();
-          btnPlay.style.display = 'block';
-        }
-        if (this.realIndex === 2) {
-          firstTabcont.classList.add('show');
-        } else {
-          firstTabcont.classList.remove('show');
-        }
-      },
-    },
-    initialSlide: 0,
-  });
-}
-
-
 // modal open
 const modalOpen = (name) => {
   let modalPop = document.querySelector(`.${name}`);
@@ -160,45 +127,4 @@ const videoPlay = (event) => {
     const btnPlay = event.target.nextElementSibling;
     btnPlay.style.display = 'block';
   });
-}
-
-// main url check slide change
-const indexSlideSet = () => {
-  const urlParams = new URL(location.href).searchParams;
-  const slide = urlParams.get('slide');
-  if (slide === '4') {
-    const guidePopup = document.querySelector('.guide');
-    guidePopup.classList.add('hide');
-    swiper.slideTo(3, 10, false);
-    footer.classList.remove('hide');
-  }
-}
-
-// event slider
-const eventSlider = () => {
-  const newUrl = `result.html`; /* 주소변경 필요 */
-  const eventLoading = document.querySelector('.event .loading');
-  const loadingVideo = eventLoading.querySelector('video');
-
-  const emotionRange = document.querySelector('.emotion_range');
-
-  const rangeValue = () => {
-    const emotionState = document.querySelector('.emotion_state');
-    const stateText = emotionState.querySelector('.state_text');
-    const rangeFill = emotionState.querySelector('.range_fill');
-    const value = Number(emotionRange.value);
-    const text = emotionState.querySelector('.text');
-
-    rangeFill.style.width = `${emotionRange.value}%`;
-
-    if (value === 100) {
-      eventLoading.style.display = 'block';
-      loadingVideo.play();
-    }
-    loadingVideo.addEventListener('ended', (event) => {
-      window.location.replace(newUrl);
-    });
-  }
-
-  emotionRange.addEventListener("input", rangeValue)
 }

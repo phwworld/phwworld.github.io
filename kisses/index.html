@@ -280,6 +280,46 @@
   <script src="./assets/js/swiper-bundle.min.js"></script>
   <script src="./assets/js/ui.js"></script>
   <script>
+    const swiper = new Swiper('.index.swiper', {
+      loop: false,
+      pagination: {
+        el: '.index .swiper-pagination',
+      },
+      on: {
+        slideChangeTransitionStart: function () {
+          const firstTabcont = document.querySelector('.tab-cont .cont .img span');
+          const video = document.querySelector('#main-video');
+          const btnPlay = video.nextElementSibling;
+          if (this.realIndex === 3) { // 마지막 슬라이드면
+            footer.classList.remove('hide');
+          } else {
+            footer.classList.add('hide');
+            video.load();
+            btnPlay.style.display = 'block';
+          }
+          if (this.realIndex === 2) {
+            firstTabcont.classList.add('show');
+          } else {
+            firstTabcont.classList.remove('show');
+          }
+        },
+      },
+      initialSlide: 0,
+    });
+
+    const indexSlideSet = () => {
+      const urlParams = new URL(location.href).searchParams;
+      const slide = urlParams.get('slide');
+      if (slide === '4') {
+        const guidePopup = document.querySelector('.guide');
+        guidePopup.classList.add('hide');
+        setTimeout(() => {
+          swiper.slideTo(3, 10, false);
+        }, 10);
+        footer.classList.remove('hide');
+      }
+    }
+
     indexSlideSet();
   </script>
 </body>
