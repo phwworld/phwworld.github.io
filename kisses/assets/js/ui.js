@@ -41,6 +41,14 @@ const modalClose = (event) => {
   if (event === 'modal-share') {
     let modalPop = document.querySelector('.modal-share');
     modalPop.classList.add('hide');
+  } else if (event === 'modal-info') {
+    let modalPop = document.querySelector('.modal-info');
+    const modalVideo = document.querySelector('.modal-info .video video');
+    const btnPlay = modalVideo.nextElementSibling;
+    modalVideo.load();
+    btnPlay.style.display = 'block';
+    modalPop.classList.add('hide');
+    dimmHide();
   } else {
     let modalPop = event.parentElement;
     if (modalPop.classList.contains('modal-join')) {
