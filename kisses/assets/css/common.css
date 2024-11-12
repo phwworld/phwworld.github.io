@@ -254,7 +254,7 @@ header button {
   margin-top: 5.333vw;
 }
 .index .swiper-slide:nth-of-type(2) .img1 {
-  margin-top: 8vw;
+  margin-top: 7.7333vw;
 }
 .index .swiper-slide .btn-kakao {
   margin-top: -3.2vw;
@@ -296,7 +296,7 @@ header button {
   margin-left: 2.6667vw;
 }
 .index .swiper-slide .tab-cont {
-  margin-top: 9.0667vw;
+  margin-top: 8.2667vw;
 }
 .index .swiper-slide .tab-cont .cont {
   display: none;
@@ -354,7 +354,7 @@ header button {
 
 .index .swiper-slide:nth-of-type(4) .inner {
   background: url(../image/slide4_img1.png) no-repeat left 20.2667vw;
-  background-size: 100% 99.8667vw;
+  background-size: 100% 19.4667vw;
 }
 .index .swiper-slide .video-area {
   padding-top: 5.3333vw;
