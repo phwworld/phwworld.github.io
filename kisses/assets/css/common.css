@@ -353,8 +353,8 @@ header button {
 }
 
 .index .swiper-slide:nth-of-type(4) .inner {
-  background: url(../image/slide4_img1.png) no-repeat left 20.2667vw;
-  background-size: 100% 19.4667vw;
+  background: url(../image/slide4_img1.png) no-repeat left 19.4667vw;
+  background-size: 100% 99.8667vw;
 }
 .index .swiper-slide .video-area {
   padding-top: 5.3333vw;
