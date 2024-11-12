@@ -257,7 +257,7 @@ header button {
   margin-top: 8vw;
 }
 .index .swiper-slide .btn-kakao {
-  /* margin-top: 8vw; */
+  margin-top: -3.2vw;
   text-align: center;
 }
 .index .swiper-slide .btn-kakao button {
@@ -529,6 +529,18 @@ header button {
   }
 }
 
+@-webkit-keyframes float2 {
+  0% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
+
 @-webkit-keyframes bounce {
   0% {
     transform: scale(1);
@@ -760,7 +772,7 @@ header button {
   left: 13.3333vw;
   width: 13.8667vw;
   height: 24.8vw;
-  animation: float 1s linear infinite alternate;
+  animation: float2 1s linear infinite alternate;
 }
 .event .motion img {
   width: 100%;
