@@ -44,7 +44,7 @@
 
       <!-- loading -->
       <div class="loading">
-        <video playsinline muted>
+        <video playsinline muted preload="auto" poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
           <source src="https://connectkisses.com/assets/video/motion.mp4">
         </video>
       </div>
@@ -110,7 +110,10 @@
       document.addEventListener('DOMContentLoaded', function () {
         const loadingVideo = document.querySelector('.loading video');
         if (loadingVideo) {
-          loadingVideo.removeAttribute('poster');
+          setTimeout(() => {
+            loadingVideo.removeAttribute('poster');
+          }, 100);
+          
         }
       })
     }
