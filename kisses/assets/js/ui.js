@@ -21,6 +21,7 @@ if (guidePopup) {
 }
 
 // modal open
+let scrPresentPos;
 const modalOpen = (name) => {
   let modalPop = document.querySelector(`.${name}`);
   if (name === 'modal-join') {
@@ -30,6 +31,12 @@ const modalOpen = (name) => {
     dimmShow();
     modalPop.classList.remove('hide');
   } else if (name === 'modal-share') {
+    modalPop.classList.remove('hide');
+  } else if (name === 'modal-pakage') {
+    scrPresentPos = window.scrollY;
+    window.scrollTo(0, 0);
+    document.querySelector('html').style.overflow = 'hidden';
+    dimmShow();
     modalPop.classList.remove('hide');
   } else {
     dimmShow();
@@ -63,6 +70,11 @@ const modalClose = (event) => {
       btnPlay.style.display = 'block';
       modalPop.classList.add('hide');
       dimmHide();
+    } else if (modalPop.classList.contains('modal-pakage')) {
+      modalPop.classList.add('hide');
+      dimmHide();
+      document.querySelector('html').style.overflow = 'auto';
+      window.scrollTo({ top: scrPresentPos });
     } else {
       modalPop.classList.add('hide');
     }

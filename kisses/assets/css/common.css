@@ -1132,9 +1132,132 @@ header button {
   top: 0;
   left: 0;
   width: 100%;
-  font-size: 0;
-  line-height: 0;
   z-index: 110;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100dvh;
+  background: url(../image/bg_main.png) no-repeat;
+  background-size: 100% 100%;
+}
+.modal-pakage.hide {
+  display: none;
+}
+.modal-pakage .logo {
+  margin-bottom: 4vw;
+  text-align: center;
+}
+.modal-pakage .logo img {
+  width: 25.6vw;
+}
+.modal-pakage .tit {
+  width: 100%;
+  font-size: 9.0666vw;
+  font-weight: 700;
+  color: #96142f;
+  text-align: center;
+  line-height: 1.1764;
+  letter-spacing: -0.45333vw;
+}
+.modal-pakage .tit span {
+  display: block;
+  padding-bottom: 1.3333vw;
+  font-size: 6.6666vw;
+  font-weight: 400;
+  letter-spacing: -0.3333vw;
+}
+.modal-pakage .tab {
+  margin: 5.3333vw auto 0;
+  width: 89.0666vw;
+  height: 9.8666vw;
+  padding: 0.8vw;
+  border-radius: 4.9333vw;
+  background: rgba(69, 3, 20, 0.1);
+}
+.modal-pakage .tab a {
+  display: inline-block;
+  height: 8.2666vw;
+  padding: 0 3.4666vw;
+  border-radius: 4.1333vw;
+  font-size: 4vw;
+  color: #96142f;
+  line-height: 8.2666vw;
+}
+.modal-pakage .tab a.act {
+  font-weight: 700;
+  background: #fff;
+}
+.modal-pakage .tab a + a {
+  margin-left: 2.6667vw;
+}
+.modal-pakage .tab-cont {
+  margin-top: 8.2667vw;
+}
+.modal-pakage .tab-cont .cont {
+  display: none;
+}
+.modal-pakage .tab-cont .cont:first-child {
+  display: block;
+}
+.modal-pakage .tab-cont .img {
+  position: relative;
+}
+.modal-pakage .tab-cont .img img {
+  width: 100%;
+}
+.modal-pakage .tab-cont .img span {
+  position: absolute;
+  top: 38.6667vw;
+  left: 32.2667vw;
+  opacity: 0;
+  transition: opacity 2s linear;
+}
+.modal-pakage .tab-cont .cont:nth-of-type(2) .img span {
+  top: 36.8vw;
+}
+.modal-pakage .tab-cont .img span.show {
+  opacity: 1;
+}
+.modal-pakage .tab-cont .img span img {
+  width: 13.3333vw;
+}
+.modal-pakage .tab-cont .txt {
+  margin-top: 2.1333vw;
+  font-size: 4vw;
+  color: #96142f;
+  text-align: center;
+}
+.modal-pakage .tab-cont .btn {
+  margin-top: 5.3333vw;
+  text-align: center;
+}
+.modal-pakage .tab-cont .btn a {
+  display: inline-block;
+  width: 54.6667vw;
+  height: 12vw;
+  border-radius: 2.6667vw;
+  font-size: 4vw;
+  font-weight: 700;
+  color: #fff;
+  line-height: 12vw;
+  background: #34000f;
+  box-shadow: 0 0.5333vw 0 0 rgba(0, 0, 0, 0.25);
+}
+.modal-pakage .tab-cont .cont:nth-of-type(2) a {
+  background: #0099de;
+}
+.modal-pakage .tab-cont .cont:nth-of-type(3) a {
+  background: #e49658;
+}
+.modal-pakage .close {
+  position: fixed;
+  top: 2.6667vw;
+  right: 2.6667vw;
+  width: 13.3333vw;
+  height: 13.3333vw;
+  background: url(../image/modal_close2.png);
+  background-size: 100% 100%;
 }
 /* ---------------------------------------------------------------------------- */
 /* pc web */
@@ -1721,5 +1844,79 @@ header button {
   .modal-share .close {
     height: calc(120px * 0.7);
     font-size: calc(30px * 0.7);
+  }
+
+  /* modal-pakage */
+  .modal-pakage {
+    left: 50%;
+    width: calc(750px * 0.7);
+    transform: translateX(-50%);
+  }
+  .modal-pakage .logo {
+    margin-bottom: calc(30px * 0.7);
+  }
+  .modal-pakage .logo img {
+    width: calc(192px * 0.7);
+  }
+  .modal-pakage .tit {
+    font-size: calc(68px * 0.7);
+    letter-spacing: -1.7px;
+  }
+  .modal-pakage .tit span {
+    padding-bottom: calc(10px * 0.7);
+    font-size: calc(50px * 0.7);
+    letter-spacing: -1.25px;
+  }
+  .modal-pakage .tab {
+    margin: calc(40px * 0.7) auto 0;
+    width: calc(668px * 0.7);
+    height: calc(74px * 0.7);
+    padding: calc(6px * 0.7);
+    border-radius: calc(1000px * 0.7);
+  }
+  .modal-pakage .tab a {
+    height: calc(62px * 0.7);
+    padding: 0 calc(24px * 0.7);
+    border-radius: calc(1000px * 0.7);
+    font-size: calc(30px * 0.7);
+    line-height: calc(62px * 0.7);
+  }
+  .modal-pakage .tab a + a {
+    margin-left: calc(10px * 0.7);
+  }
+  .modal-pakage .tab-cont {
+    margin-top: calc(64px * 0.7);
+  }
+  .modal-pakage .tab-cont .img span {
+    top: calc(290px * 0.7);
+    left: calc(242px * 0.7);
+  }
+  .modal-pakage .tab-cont .cont:nth-of-type(2) .img span {
+    top: calc(276px * 0.7);
+  }
+  .modal-pakage .tab-cont .img span img {
+    width: calc(120px * 0.7);
+  }
+  .modal-pakage .tab-cont .txt {
+    margin-top: calc(16px * 0.7);
+    font-size: calc(30px * 0.7);
+  }
+  .modal-pakage .tab-cont .btn {
+    margin-top: calc(40px * 0.7);
+  }
+  .modal-pakage .tab-cont .btn a {
+    display: inline-block;
+    width: calc(410px * 0.7);
+    height: calc(90px * 0.7);
+    border-radius: calc(20px * 0.7);
+    font-size: calc(30px * 0.7);
+    line-height: calc(90px * 0.7);
+    box-shadow: 0 calc(4px * 0.7) 0 0 rgba(0, 0, 0, 0.25);
+  }
+  .modal-pakage .close {
+    top: calc(20px * 0.7);
+    right: calc(20px * 0.7);
+    width: calc(100px * 0.7);
+    height: calc(100px * 0.7);
   }
 }
