@@ -106,6 +106,13 @@
       }
 
       emotionRange.addEventListener("input", rangeValue)
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const loadingVideo = document.querySelector('.loading video');
+        if (loadingVideo) {
+          loadingVideo.removeAttribute('poster';)
+    }
+      })
     }
 
     eventSlider();
