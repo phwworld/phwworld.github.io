@@ -38,6 +38,10 @@ const modalOpen = (name) => {
     document.querySelector('html').style.overflow = 'hidden';
     dimmShow();
     modalPop.classList.remove('hide');
+    const firstTabcont = document.querySelector('.tab-cont .cont .img span');
+    setTimeout(() => {
+      firstTabcont.classList.add('show');
+    }, 300);
   } else {
     dimmShow();
   }
