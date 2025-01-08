@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page tab</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      height: 100vh;
+    }
+
+    .wrap p {
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <p>화면을 클릭해주세요</p>
+    <p class="result">0</p>
+  </div>
+
+  <script>
+    const target = document.querySelector(".wrap");
+    const result = document.querySelector(".result");
+    let resultNum = 0;
+    target.addEventListener("click", () => {
+      if (resultNum < 5) {
+        resultNum++;
+        result.innerHTML = resultNum;
+        console.log(resultNum);
+      } else {
+        result.innerHTML = "결과 노출"
+      }
+    })
+  </script>
+</body>
+
+</html>
