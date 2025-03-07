@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>random function</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    body{background: red;}
+    #player,
+    #player2{width: 100%;aspect-ratio: 16 / 9;overflow: hidden;margin: 0;}
+  </style>
 </head>
 <body>
   
-  <div id="player"></div>
-  <div id="player2"></div>
+  <div style="display: flex;flex-wrap: wrap;">
+    <div id="player"></div>
+    <!-- <div id="player2"></div> -->
+  </div>
 
 
   <script>
@@ -21,9 +29,8 @@
     let player2;
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
-        height: '390',
-        width: '640',
-        // videoId: 'i5t92xrTlIA',
+        height: '100%',
+        width: '100%',
         playerVars: {
           'playsinline': 1,
         },
@@ -33,15 +40,16 @@
         }
       });
       player2 = new YT.Player('player2', {
-        height: '390',
-        width: '640',
+        height: '100%',
+        width: '100%',
         videoId: 'i5t92xrTlIA',
         playerVars: {
           'playsinline': 1,
           'loop': 1,
           'playlist': 'i5t92xrTlIA',
           'autoplay': 1,
-          'mute' : 1
+          'mute' : 1,
+          'controls': 0
         },
         events: {
           'onReady': onPlayerReady2
