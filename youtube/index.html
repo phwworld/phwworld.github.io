@@ -33,6 +33,9 @@
         width: '100%',
         playerVars: {
           'playsinline': 1,
+          'autoplay': 1,
+          'mute' : 1,
+          'controls': 0
         },
         events: {
           'onReady': onPlayerReady,
@@ -58,7 +61,6 @@
     }
 
     function onPlayerReady(event) {
-      alert();
       videoRandomPlay();
     }
 
